@@ -1,12 +1,175 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Marianna Petrova | Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marianna Petrova | Portfolio</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #111111;
+      color: #eeeeee;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 7%;
+      border-bottom: 1px solid #333;
+    }
+
+    .logo { font-size: 20px; font-weight: bold; }
+
+    nav { display: flex; gap: 25px; }
+    nav a { font-size: 12px; letter-spacing: 2px; }
+    nav a:hover { color: #999; }
+
+    main { max-width: 1200px; margin: auto; padding: 0 7%; }
+
+    .hero { padding: 110px 0 100px; }
+
+    h1 {
+      font-size: clamp(48px, 9vw, 110px);
+      line-height: 0.95;
+      letter-spacing: -4px;
+      margin: 0 0 30px;
+      font-weight: 500;
+    }
+
+    .subtitle { color: #ccc; font-size: 17px; }
+    .intro { color: #888; font-size: 14px; }
+
+    section { margin-bottom: 110px; }
+
+    h2 {
+      font-size: 17px;
+      font-weight: normal;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      border-bottom: 1px solid #444;
+      padding-bottom: 20px;
+      margin-bottom: 35px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 35px;
+    }
+
+    .project-image {
+      background: #252525;
+      aspect-ratio: 16 / 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #777;
+      transition: background 0.3s;
+    }
+
+    .project:hover .project-image { background: #333; }
+    .project h3 { font-size: 20px; font-weight: normal; }
+    .project p { color: #888; font-size: 13px; }
+
+    .about { max-width: 650px; color: #bbb; }
+
+    footer {
+      padding: 35px 7%;
+      border-top: 1px solid #333;
+      color: #888;
+      font-size: 12px;
+    }
+
+    @media (max-width: 650px) {
+      header { flex-direction: column; gap: 20px; }
+      .hero { padding: 75px 0; }
+      h1 { letter-spacing: -2px; }
+      .projects { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Marianna Petrova</h1>
-    <p>Game Developer | 2D Artist | Narrative Designer</p>
-    <p>Welcome to my portfolio!</p>
+  <header>
+    <a class="logo" href="#">MP.</a>
+    <nav>
+      <a href="#work">WORK</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1>MARIANNA<br>PETROVA.</h1>
+      <p class="subtitle">
+        2D Artist / Narrative Designer / Indie Game Creator
+      </p>
+      <p class="intro">
+        Creating atmospheric illustrations and story-driven games.
+      </p>
+    </div>
+
+    <section id="work">
+      <h2>Selected Work</h2>
+      <div class="projects">
+
+        <div class="project">
+          <div class="project-image">KUPALA ARTWORK</div>
+          <h3>Kupala</h3>
+          <p>Visual Novel · 2026</p>
+        </div>
+
+        <div class="project">
+          <div class="project-image">2D ARTWORK</div>
+          <h3>2D Art & Illustration</h3>
+          <p>Characters · Environments · Concept Art</p>
+        </div>
+
+        <div class="project">
+          <div class="project-image">3D ARTWORK</div>
+          <h3>3D Art</h3>
+          <p>Blender · Modeling · Texturing</p>
+        </div>
+
+        <div class="project">
+          <div class="project-image">GAME PROJECT</div>
+          <h3>Game Projects</h3>
+          <p>Unity · Prototypes · Interactive Experiences</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p class="about">
+        I'm an independent game creator and 2D artist
+        interested in atmospheric storytelling, character
+        design and interactive experiences.
+        I created and released my own visual novel, Kupala,
+        and continue exploring 2D art, 3D modeling and
+        game development.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: your-email@example.com</p>
+      <p>Steam · itch.io · LinkedIn</p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Marianna Petrova
+  </footer>
 </body>
 </html>
