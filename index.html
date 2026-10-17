@@ -5,8 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Marianna Petrova | Portfolio</title>
+
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -16,7 +19,10 @@
       line-height: 1.6;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     header {
       display: flex;
@@ -26,15 +32,34 @@
       border-bottom: 1px solid #333;
     }
 
-    .logo { font-size: 20px; font-weight: bold; }
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
 
-    nav { display: flex; gap: 25px; }
-    nav a { font-size: 12px; letter-spacing: 2px; }
-    nav a:hover { color: #999; }
+    nav {
+      display: flex;
+      gap: 25px;
+    }
 
-    main { max-width: 1200px; margin: auto; padding: 0 7%; }
+    nav a {
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
 
-    .hero { padding: 110px 0 100px; }
+    nav a:hover {
+      color: #999;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 7%;
+    }
+
+    .hero {
+      padding: 110px 0 100px;
+    }
 
     h1 {
       font-size: clamp(48px, 9vw, 110px);
@@ -44,10 +69,19 @@
       font-weight: 500;
     }
 
-    .subtitle { color: #ccc; font-size: 17px; }
-    .intro { color: #888; font-size: 14px; }
+    .subtitle {
+      color: #ccc;
+      font-size: 17px;
+    }
 
-    section { margin-bottom: 110px; }
+    .intro {
+      color: #888;
+      font-size: 14px;
+    }
+
+    section {
+      margin-bottom: 110px;
+    }
 
     h2 {
       font-size: 17px;
@@ -75,11 +109,40 @@
       transition: background 0.3s;
     }
 
-    .project:hover .project-image { background: #333; }
-    .project h3 { font-size: 20px; font-weight: normal; }
-    .project p { color: #888; font-size: 13px; }
+    .project:hover .project-image {
+      background: #333;
+    }
 
-    .about { max-width: 650px; color: #bbb; }
+    .project h3 {
+      font-size: 20px;
+      font-weight: normal;
+    }
+
+    .project p {
+      color: #888;
+      font-size: 13px;
+    }
+
+    .about {
+      max-width: 650px;
+      color: #bbb;
+    }
+
+    .languages {
+      max-width: 650px;
+    }
+
+    .language-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 0;
+      border-bottom: 1px solid #333;
+      font-size: 14px;
+    }
+
+    .language-level {
+      color: #999;
+    }
 
     footer {
       padding: 35px 7%;
@@ -89,17 +152,31 @@
     }
 
     @media (max-width: 650px) {
-      header { flex-direction: column; gap: 20px; }
-      .hero { padding: 75px 0; }
-      h1 { letter-spacing: -2px; }
-      .projects { grid-template-columns: 1fr; }
+      header {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .hero {
+        padding: 75px 0;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 
 <body>
+
   <header>
     <a class="logo" href="#">MP.</a>
+
     <nav>
       <a href="#work">WORK</a>
       <a href="#about">ABOUT</a>
@@ -108,11 +185,14 @@
   </header>
 
   <main>
+
     <div class="hero">
-      <h1>MARIANNA<br>PETROVA.</h1>
+      <h1>MARIANNA<br>PETROVA</h1>
+
       <p class="subtitle">
         2D Artist / Narrative Designer / Indie Game Creator
       </p>
+
       <p class="intro">
         Creating atmospheric illustrations and story-driven games.
       </p>
@@ -120,28 +200,37 @@
 
     <section id="work">
       <h2>Selected Work</h2>
+
       <div class="projects">
 
         <div class="project">
-          <div class="project-image">KUPALA ARTWORK</div>
+          <div class="project-image">
+            KUPALA ARTWORK
+          </div>
           <h3>Kupala</h3>
           <p>Visual Novel · 2026</p>
         </div>
 
         <div class="project">
-          <div class="project-image">2D ARTWORK</div>
+          <div class="project-image">
+            2D ARTWORK
+          </div>
           <h3>2D Art & Illustration</h3>
           <p>Characters · Environments · Concept Art</p>
         </div>
 
         <div class="project">
-          <div class="project-image">3D ARTWORK</div>
+          <div class="project-image">
+            3D ARTWORK
+          </div>
           <h3>3D Art</h3>
           <p>Blender · Modeling · Texturing</p>
         </div>
 
         <div class="project">
-          <div class="project-image">GAME PROJECT</div>
+          <div class="project-image">
+            GAME PROJECT
+          </div>
           <h3>Game Projects</h3>
           <p>Unity · Prototypes · Interactive Experiences</p>
         </div>
@@ -151,6 +240,7 @@
 
     <section id="about">
       <h2>About Me</h2>
+
       <p class="about">
         I'm an independent game creator and 2D artist
         interested in atmospheric storytelling, character
@@ -161,15 +251,41 @@
       </p>
     </section>
 
+    <section id="languages">
+      <h2>Languages</h2>
+
+      <div class="languages">
+
+        <div class="language-row">
+          <span>Russian</span>
+          <span class="language-level">Native</span>
+        </div>
+
+        <div class="language-row">
+          <span>English</span>
+          <span class="language-level">B2</span>
+        </div>
+
+        <div class="language-row">
+          <span>Estonian</span>
+          <span class="language-level">B2</span>
+        </div>
+
+      </div>
+    </section>
+
     <section id="contact">
       <h2>Contact</h2>
+
       <p>Email: your-email@example.com</p>
       <p>Steam · itch.io · LinkedIn</p>
     </section>
+
   </main>
 
   <footer>
     © 2026 Marianna Petrova
   </footer>
+
 </body>
 </html>
