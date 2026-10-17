@@ -137,6 +137,60 @@
       font-size: 13px;
     }
 
+    /* KUPALA HOVER EFFECT */
+
+    .kupala-link {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .kupala-link img {
+      transition: filter 0.35s ease, transform 0.35s ease;
+    }
+
+    .kupala-link::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.12);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    .kupala-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    .kupala-overlay span {
+      padding: 12px 22px;
+      background: rgba(17, 17, 17, 0.75);
+      color: #fff;
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+
+    .kupala-link:hover img,
+    .kupala-link:focus-visible img {
+      filter: brightness(1.25);
+      transform: scale(1.02);
+    }
+
+    .kupala-link:hover::after,
+    .kupala-link:focus-visible::after,
+    .kupala-link:hover .kupala-overlay,
+    .kupala-link:focus-visible .kupala-overlay {
+      opacity: 1;
+    }
+
     /* ABOUT */
 
     .about {
@@ -235,6 +289,20 @@
         gap: 25px;
       }
     }
+
+    @media (hover: none) {
+      .kupala-overlay {
+        opacity: 1;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .kupala-link img,
+      .kupala-link::after,
+      .kupala-overlay {
+        transition: none;
+      }
+    }
   </style>
 </head>
 
@@ -264,10 +332,18 @@
       <div class="projects">
 
         <div class="project">
-          <div class="project-image">
+          <a class="project-image kupala-link"
+             href="kupala.html"
+             aria-label="Read more about Kupala">
+
             <img src="images/Kupala (25).png"
                  alt="Kupala visual novel artwork">
-          </div>
+
+            <div class="kupala-overlay">
+              <span>READ MORE →</span>
+            </div>
+          </a>
+
           <h3>Kupala</h3>
           <p>Visual Novel · 2026</p>
         </div>
@@ -409,3 +485,4 @@
 
 </body>
 </html>
+
