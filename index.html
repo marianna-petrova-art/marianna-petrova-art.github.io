@@ -3,7 +3,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Marianna Petrova | Portfolio</title>
 
   <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
@@ -19,10 +20,10 @@
 
     body {
       margin: 0;
-      background: #111111;
-      color: #eeeeee;
+      background: #111;
+      color: #eee;
       font-family: Arial, sans-serif;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     a {
@@ -31,25 +32,25 @@
     }
 
     header {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
       padding: 28px 7%;
       border-bottom: 1px solid #333;
     }
 
     nav {
       display: flex;
-      gap: 25px;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 35px;
     }
 
     nav a {
       font-size: 12px;
       letter-spacing: 2px;
+      color: #ccc;
     }
 
     nav a:hover {
-      color: #999;
+      color: #fff;
     }
 
     main {
@@ -58,31 +59,33 @@
       padding: 0 7%;
     }
 
-    /* INTRO */
+    /* HERO */
 
     .hero {
-      padding: 65px 0 35px;
+      padding: 105px 0 100px;
     }
 
     h1 {
       font-family: 'PT Serif', Georgia, serif;
-      font-size: clamp(48px, 9vw, 110px);
-      line-height: 1.1;
-      letter-spacing: -2px;
-      margin: 0 0 30px;
+      font-size: clamp(46px, 7vw, 90px);
       font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin: 0 0 25px;
     }
 
-    .subtitle {
+    .hero p {
+      color: #aaa;
+      font-size: 16px;
+      letter-spacing: 1px;
       margin: 0;
-      color: #ccc;
-      font-size: 17px;
     }
 
     /* SECTIONS */
 
     section {
-      margin-bottom: 40px;
+      margin-bottom: 100px;
+      scroll-margin-top: 35px;
     }
 
     h2 {
@@ -91,163 +94,103 @@
       letter-spacing: 3px;
       text-transform: uppercase;
       border-bottom: 1px solid #444;
-      padding-bottom: 14px;
-      margin: 0 0 20px;
+      padding-bottom: 15px;
+      margin: 0 0 35px;
     }
 
-    /* PROJECTS */
+    /* PORTFOLIO GRID */
 
-    .projects {
+    .work-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px 35px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 45px 25px;
     }
 
-    .project-image {
-      background: #252525;
+    .work-card {
+      display: block;
+      min-width: 0;
+    }
+
+    .work-image {
+      width: 100%;
       aspect-ratio: 16 / 10;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #777;
+      background: #1b1b1b;
+      border: 1px solid #333;
       overflow: hidden;
-      transition: background 0.3s;
     }
 
-    .project-image img {
+    .work-image img {
       display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: filter 0.2s ease;
     }
 
-    .project:hover .project-image {
-      background: #333;
+    .work-card:hover .work-image img {
+      filter: brightness(1.15);
     }
 
-    .project h3 {
-      margin: 12px 0 3px;
-      font-size: 20px;
+    .work-title {
+      margin: 15px 0 5px;
+      font-size: 16px;
       font-weight: normal;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
-    .project p {
-      margin: 0;
-      color: #888;
+    .work-description {
+      color: #999;
       font-size: 13px;
+      margin: 0;
     }
 
-    /* KUPALA HOVER EFFECT */
-
-    .kupala-link {
-      display: block;
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-    }
-
-    .kupala-link img {
-      transition: filter 0.35s ease, transform 0.35s ease;
-    }
-
-    .kupala-link::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(255, 255, 255, 0.12);
-      opacity: 0;
-      transition: opacity 0.35s ease;
-    }
-
-    .kupala-overlay {
-      position: absolute;
-      inset: 0;
+    .placeholder {
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 1;
-      opacity: 0;
-      transition: opacity 0.35s ease;
-    }
-
-    .kupala-overlay span {
-      padding: 12px 22px;
-      background: rgba(17, 17, 17, 0.75);
-      color: #fff;
-      font-size: 13px;
+      width: 100%;
+      height: 100%;
+      color: #666;
+      font-size: 12px;
       letter-spacing: 2px;
-    }
-
-    .kupala-link:hover img,
-    .kupala-link:focus-visible img {
-      filter: brightness(1.25);
-      transform: scale(1.02);
-    }
-
-    .kupala-link:hover::after,
-    .kupala-link:focus-visible::after,
-    .kupala-link:hover .kupala-overlay,
-    .kupala-link:focus-visible .kupala-overlay {
-      opacity: 1;
     }
 
     /* ABOUT */
 
-    .about {
-      max-width: 650px;
-      color: #bbb;
+    .about-text {
+      max-width: 800px;
+      color: #aaa;
+      font-size: 16px;
     }
 
-    .about p {
-      margin: 0 0 18px;
-      line-height: 1.8;
-    }
-
-    .about-languages {
-      margin-top: 24px;
-      padding-top: 16px;
-      border-top: 1px solid #333;
-      color: #999;
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-    .about-languages strong {
-      color: #ccc;
-      font-weight: normal;
+    .about-text p {
+      margin: 0 0 20px;
     }
 
     /* CONTACT */
 
     .contact-list {
-      max-width: 750px;
+      max-width: 800px;
     }
 
     .contact-row {
-      padding: 16px 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 0;
       border-bottom: 1px solid #333;
+      font-size: 14px;
     }
 
     .contact-label {
-      color: #999;
-      font-size: 13px;
-      letter-spacing: 0.5px;
-      margin-bottom: 6px;
-    }
-
-    .contact-row a {
-      display: inline-block;
-      font-size: 14px;
-      text-align: left;
-      overflow-wrap: anywhere;
-      transition: color 0.2s;
+      color: #888;
     }
 
     .contact-row a:hover {
-      color: #999;
+      text-decoration: underline;
+      text-underline-offset: 4px;
     }
-
-    /* FOOTER */
 
     footer {
       padding: 28px 7%;
@@ -256,50 +199,38 @@
       font-size: 12px;
     }
 
-    /* MOBILE */
-
     @media (max-width: 650px) {
       header {
-        justify-content: center;
+        padding-top: 22px;
+        padding-bottom: 22px;
       }
 
       nav {
-        gap: 18px;
+        justify-content: center;
+        gap: 25px;
       }
 
       .hero {
-        padding: 45px 0 35px;
-      }
-
-      h1 {
-        font-size: clamp(42px, 10vw, 65px);
-        letter-spacing: -1px;
-      }
-
-      .subtitle {
-        font-size: 15px;
+        padding: 70px 0;
       }
 
       section {
-        margin-bottom: 35px;
+        margin-bottom: 70px;
       }
 
-      .projects {
+      .work-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
+        gap: 35px;
       }
-    }
 
-    @media (hover: none) {
-      .kupala-overlay {
-        opacity: 1;
+      .contact-row {
+        flex-direction: column;
+        gap: 4px;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .kupala-link img,
-      .kupala-link::after,
-      .kupala-overlay {
+      .work-image img {
         transition: none;
       }
     }
@@ -318,131 +249,142 @@
 
   <main>
 
+    <!-- HERO -->
+
     <div class="hero">
       <h1>MARIANNA<br>PETROVA</h1>
 
-      <p class="subtitle">
+      <p>
         2D Artist / Narrative Designer / Indie Game Creator
       </p>
     </div>
 
+    <!-- WORK -->
+
     <section id="work">
+
       <h2>Selected Work</h2>
 
-      <div class="projects">
+      <div class="work-grid">
 
-        <div class="project">
-          <a class="project-image kupala-link"
-             href="kupala.html"
-             aria-label="Read more about Kupala">
+        <!-- KUPALA -->
 
-            <img src="images/Kupala (25).png"
-                 alt="Kupala visual novel artwork">
+        <a href="kupala.html" class="work-card">
 
-            <div class="kupala-overlay">
-              <span>READ MORE →</span>
+          <div class="work-image">
+            <img
+              src="images/Kupala (25).png"
+              alt="Kupala horror visual novel"
+            >
+          </div>
+
+          <h3 class="work-title">KUPALA</h3>
+
+          <p class="work-description">
+            Horror Visual Novel
+          </p>
+
+        </a>
+
+        <!-- 2D ARTWORK -->
+
+        <a href="art.html" class="work-card">
+
+          <div class="work-image">
+            <img
+              src="images/grandmareading.png"
+              alt="Grandmother reading a story to the girls, black-and-white illustration from Kupala"
+            >
+          </div>
+
+          <h3 class="work-title">2D ARTWORK</h3>
+
+          <p class="work-description">
+            Characters, Environments & Illustrations
+          </p>
+
+        </a>
+
+        <!-- 3D ARTWORK -->
+
+        <div class="work-card">
+
+          <div class="work-image">
+            <div class="placeholder">
+              3D ARTWORK
             </div>
-          </a>
+          </div>
 
-          <h3>Kupala</h3>
-          <p>Visual Novel · 2026</p>
+          <h3 class="work-title">3D ARTWORK</h3>
+
+          <p class="work-description">
+            3D Models & Environments
+          </p>
+
         </div>
 
-        <div class="project">
-          <div class="project-image">
-            2D ARTWORK
-          </div>
-          <h3>2D Art & Illustration</h3>
-          <p>Characters · Environments · Concept Art</p>
-        </div>
+        <!-- GAME PROJECT -->
 
-        <div class="project">
-          <div class="project-image">
-            3D ARTWORK
-          </div>
-          <h3>3D Art</h3>
-          <p>Blender · Modeling · Texturing</p>
-        </div>
+        <div class="work-card">
 
-        <div class="project">
-          <div class="project-image">
-            GAME PROJECT
+          <div class="work-image">
+            <div class="placeholder">
+              GAME PROJECT
+            </div>
           </div>
-          <h3>Game Projects</h3>
-          <p>Unity · Prototypes · Interactive Experiences</p>
+
+          <h3 class="work-title">GAME PROJECT</h3>
+
+          <p class="work-description">
+            Game Development
+          </p>
+
         </div>
 
       </div>
     </section>
+
+    <!-- ABOUT -->
 
     <section id="about">
+
       <h2>About Me</h2>
 
-      <div class="about">
+      <div class="about-text">
+
         <p>
           I'm an independent game developer and 2D artist
-          with a passion for creating atmospheric stories,
-          characters, and game worlds.
+          with an interest in storytelling, illustration,
+          and game development.
         </p>
 
         <p>
-          I spent a year and a half independently developing
-          my first game, <em>Kupala</em>, a horror visual novel
-          released on Steam in 2026. I was responsible for
-          the story, illustrations, programming, and preparing
-          the game for release.
+          In 2026, I released my first horror visual novel,
+          <em>Kupala</em>, which I developed independently.
+          I worked on the story, illustrations, programming,
+          and visual design.
         </p>
 
         <p>
-          I work with Ren'Py, Unity, Blender, Krita,
-          and Adobe Photoshop.
+          I primarily work with Krita for digital illustration
+          and am expanding my skills in Unity, Blender,
+          and 3D game development.
         </p>
 
-        <p>
-          I'm currently working on my own projects, but
-          I'm also open to joining a game studio or
-          collaborating with other creators. I'd love
-          to be part of a team creating atmospheric
-          and memorable games together.
-        </p>
-
-        <div class="about-languages">
-          <strong>Languages:</strong>
-          Russian (Native) · English (B2) · Estonian (B2)
-        </div>
       </div>
+
     </section>
 
+    <!-- CONTACT -->
+
     <section id="contact">
+
       <h2>Contact</h2>
 
       <div class="contact-list">
 
         <div class="contact-row">
-          <div class="contact-label">
-            JOB OPPORTUNITIES & COLLABORATIONS
-          </div>
-
-          <a href="mailto:marianna.petrova.02@gmail.com">
-            marianna.petrova.02@gmail.com
-          </a>
-        </div>
-
-        <div class="contact-row">
-          <div class="contact-label">
-            KUPALA / GAME INQUIRIES
-          </div>
-
-          <a href="mailto:kupalavn@gmail.com">
-            kupalavn@gmail.com
-          </a>
-        </div>
-
-        <div class="contact-row">
-          <div class="contact-label">
-            STEAM
-          </div>
-
+          <span class="contact-label">Steam</span>
           <a href="https://store.steampowered.com/app/4037300/Kupala/"
              target="_blank"
              rel="noopener noreferrer">
@@ -451,30 +393,16 @@
         </div>
 
         <div class="contact-row">
-          <div class="contact-label">
-            ITCH.IO
-          </div>
-
-          <a href="https://tmbaig.itch.io/kupalademo"
+          <span class="contact-label">GitHub</span>
+          <a href="https://github.com/marianna-petrova-art"
              target="_blank"
              rel="noopener noreferrer">
-            Kupala Demo ↗
-          </a>
-        </div>
-
-        <div class="contact-row">
-          <div class="contact-label">
-            TELEGRAM
-          </div>
-
-          <a href="https://t.me/tmbaig"
-             target="_blank"
-             rel="noopener noreferrer">
-            @tmbaig ↗
+            marianna-petrova-art ↗
           </a>
         </div>
 
       </div>
+
     </section>
 
   </main>
@@ -485,4 +413,3 @@
 
 </body>
 </html>
-
