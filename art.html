@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>2D Art & Illustration | Marianna Petrova</title>
 
   <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
@@ -56,8 +55,6 @@
       padding: 55px 7% 75px;
     }
 
-    /* INTRO */
-
     .intro {
       margin-bottom: 55px;
     }
@@ -77,8 +74,6 @@
       font-size: 16px;
       margin: 0;
     }
-
-    /* SECTIONS */
 
     .art-section {
       margin-bottom: 60px;
@@ -100,8 +95,6 @@
       font-size: 14px;
       margin: 0 0 25px;
     }
-
-    /* GALLERY */
 
     .gallery {
       display: grid;
@@ -137,15 +130,11 @@
       filter: brightness(1.1);
     }
 
-    /* CENTER LAST IMAGE IN ODD GALLERIES */
-
     .gallery .artwork:last-child:nth-child(odd) {
       grid-column: 1 / -1;
       width: calc((100% - 18px) / 2);
       justify-self: center;
     }
-
-    /* FULLSCREEN IMAGE VIEW */
 
     .image-modal {
       display: none;
@@ -186,8 +175,6 @@
       color: #aaa;
     }
 
-    /* PROJECT LINK */
-
     .project-note {
       border-top: 1px solid #444;
       padding-top: 25px;
@@ -212,8 +199,6 @@
       color: #888;
       font-size: 12px;
     }
-
-    /* MOBILE */
 
     @media (max-width: 650px) {
       main {
@@ -261,8 +246,6 @@
 
   <main>
 
-    <!-- INTRODUCTION -->
-
     <div class="intro">
       <h1>2D ART &<br>ILLUSTRATION</h1>
 
@@ -277,53 +260,41 @@
     <!-- PORTRAITS & CHARACTERS -->
 
     <section class="art-section">
-
       <h2>Portraits & Characters</h2>
 
       <p class="section-description">
-        Character illustrations exploring facial expressions,
-        emotions, and dramatic lighting.
+        Characters from the visual novel <em>Kupala</em>.
       </p>
 
       <div class="gallery">
 
         <div class="artwork">
           <button class="gallery-button" type="button" aria-label="Enlarge Anya illustration">
-            <img src="images/anya.png"
-                 alt="Anya character illustration"
-                 loading="lazy">
+            <img src="images/anya.png" alt="Anya character illustration" loading="lazy">
           </button>
         </div>
 
         <div class="artwork">
           <button class="gallery-button" type="button" aria-label="Enlarge grandmother illustration">
-            <img src="images/grandma.png"
-                 alt="Grandmother character illustration"
-                 loading="lazy">
+            <img src="images/grandma.png" alt="Grandmother character illustration" loading="lazy">
           </button>
         </div>
 
         <div class="artwork">
           <button class="gallery-button" type="button" aria-label="Enlarge character illustration">
-            <img src="images/killdevbad.png"
-                 alt="Frightened character in darkness"
-                 loading="lazy">
+            <img src="images/killdevbad.png" alt="Frightened character in darkness" loading="lazy">
           </button>
         </div>
 
         <div class="artwork">
           <button class="gallery-button" type="button" aria-label="Enlarge mother illustration">
-            <img src="images/mamangry.png"
-                 alt="Angry mother character illustration"
-                 loading="lazy">
+            <img src="images/mamangry.png" alt="Angry mother character illustration" loading="lazy">
           </button>
         </div>
 
         <div class="artwork">
           <button class="gallery-button" type="button" aria-label="Enlarge sick girl illustration">
-            <img src="images/sickgirl.png"
-                 alt="Sick girl character illustration"
-                 loading="lazy">
+            <img src="images/sickgirl.png" alt="Sick girl character illustration" loading="lazy">
           </button>
         </div>
 
@@ -333,53 +304,42 @@
     <!-- ENVIRONMENT ART -->
 
     <section class="art-section">
-
       <h2>Environment Art</h2>
 
       <p class="section-description">
-        Atmospheric landscapes and environments
-        inspired by Slavic folklore and rural life.
+        Rural landscapes and nature illustrations from
+        the visual novel <em>Kupala</em>.
       </p>
 
       <div class="gallery">
 
         <div class="artwork">
           <button class="gallery-button" type="button" aria-label="Enlarge moonlit ritual illustration">
-            <img src="images/nocpolana.png"
-                 alt="Moonlit forest ritual"
-                 loading="lazy">
+            <img src="images/nocpolana.png" alt="Moonlit forest ritual" loading="lazy">
           </button>
         </div>
 
         <div class="artwork">
           <button class="gallery-button" type="button" aria-label="Enlarge lake illustration">
-            <img src="images/ozerokonc.png"
-                 alt="Lake landscape"
-                 loading="lazy">
+            <img src="images/ozerokonc.png" alt="Lake landscape" loading="lazy">
           </button>
         </div>
 
         <div class="artwork">
           <button class="gallery-button" type="button" aria-label="Enlarge field illustration">
-            <img src="images/pole.png"
-                 alt="Field of daisies"
-                 loading="lazy">
+            <img src="images/pole.png" alt="Field of daisies" loading="lazy">
           </button>
         </div>
 
         <div class="artwork">
           <button class="gallery-button" type="button" aria-label="Enlarge village illustration">
-            <img src="images/village.png"
-                 alt="Countryside village"
-                 loading="lazy">
+            <img src="images/village.png" alt="Countryside village" loading="lazy">
           </button>
         </div>
 
         <div class="artwork">
           <button class="gallery-button" type="button" aria-label="Enlarge night forest illustration">
-            <img src="images/lesnoc.png"
-                 alt="Forest at night"
-                 loading="lazy">
+            <img src="images/lesnoc.png" alt="Forest at night" loading="lazy">
           </button>
         </div>
 
@@ -389,53 +349,42 @@
     <!-- INTERIORS & PROPS -->
 
     <section class="art-section">
-
       <h2>Interiors & Props</h2>
 
       <p class="section-description">
-        Interior illustrations exploring perspective,
-        atmosphere, lighting, and everyday objects.
+        Illustrations of Grandmother Maropa's house
+        from the visual novel <em>Kupala</em>.
       </p>
 
       <div class="gallery">
 
         <div class="artwork">
           <button class="gallery-button" type="button" aria-label="Enlarge bedroom illustration">
-            <img src="images/bedroom.png"
-                 alt="Traditional countryside bedroom"
-                 loading="lazy">
+            <img src="images/bedroom.png" alt="Traditional countryside bedroom" loading="lazy">
           </button>
         </div>
 
         <div class="artwork">
           <button class="gallery-button" type="button" aria-label="Enlarge moonlit bedroom illustration">
-            <img src="images/nightroom.png"
-                 alt="Bedroom illuminated by moonlight"
-                 loading="lazy">
+            <img src="images/nightroom.png" alt="Bedroom illuminated by moonlight" loading="lazy">
           </button>
         </div>
 
         <div class="artwork">
           <button class="gallery-button" type="button" aria-label="Enlarge house interior illustration">
-            <img src="images/komnatalena.png"
-                 alt="Traditional wooden house interior"
-                 loading="lazy">
+            <img src="images/komnatalena.png" alt="Traditional wooden house interior" loading="lazy">
           </button>
         </div>
 
         <div class="artwork">
           <button class="gallery-button" type="button" aria-label="Enlarge kitchen illustration">
-            <img src="images/vecherroditeli.png"
-                 alt="Family kitchen scene"
-                 loading="lazy">
+            <img src="images/vecherroditeli.png" alt="Family kitchen scene" loading="lazy">
           </button>
         </div>
 
         <div class="artwork">
           <button class="gallery-button" type="button" aria-label="Enlarge props illustration">
-            <img src="images/stolruka.png"
-                 alt="Drawer with books and objects"
-                 loading="lazy">
+            <img src="images/stolruka.png" alt="Drawer with books and objects" loading="lazy">
           </button>
         </div>
 
@@ -445,46 +394,38 @@
     <!-- LINOCUT-STYLE ILLUSTRATIONS -->
 
     <section class="art-section">
-
       <h2>Linocut-Style Illustrations</h2>
 
       <p class="section-description">
-        Black-and-white illustrations created for the
-        folklore tales featured in my horror visual novel
-        <em>Kupala</em>, inspired by traditional linocut
-        printmaking.
+        Illustrations for the folklore tales featured
+        in the visual novel <em>Kupala</em>, inspired
+        by traditional linocut printmaking.
       </p>
 
       <div class="gallery">
 
         <div class="artwork">
           <button class="gallery-button" type="button" aria-label="Enlarge first folklore illustration">
-            <img src="images/skazka1.png"
-                 alt="Folklore illustration of a woman preparing a potion"
-                 loading="lazy">
+            <img src="images/skazka1.png" alt="Folklore illustration of a woman preparing a potion" loading="lazy">
           </button>
         </div>
 
         <div class="artwork">
           <button class="gallery-button" type="button" aria-label="Enlarge second folklore illustration">
-            <img src="images/skazka2.png"
-                 alt="Folklore illustration of a ritual near a tree"
-                 loading="lazy">
+            <img src="images/skazka2.png" alt="Folklore illustration of a ritual near a tree" loading="lazy">
           </button>
         </div>
 
         <div class="artwork">
           <button class="gallery-button" type="button" aria-label="Enlarge third folklore illustration">
-            <img src="images/skazka4.png"
-                 alt="Folklore illustration of an old woman and a cradle"
-                 loading="lazy">
+            <img src="images/skazka4.png" alt="Folklore illustration of an old woman and a cradle" loading="lazy">
           </button>
         </div>
 
       </div>
     </section>
 
-    <!-- PROJECT CREDIT -->
+    <!-- PROJECT LINK -->
 
     <div class="project-note">
       All illustrations featured on this page were
@@ -520,17 +461,10 @@
   </footer>
 
   <script>
-    const galleryButtons =
-      document.querySelectorAll(".gallery-button");
-
-    const imageModal =
-      document.getElementById("imageModal");
-
-    const modalImage =
-      document.getElementById("modalImage");
-
-    const modalClose =
-      document.getElementById("modalClose");
+    const galleryButtons = document.querySelectorAll(".gallery-button");
+    const imageModal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+    const modalClose = document.getElementById("modalClose");
 
     let previousFocus = null;
 
@@ -550,7 +484,6 @@
     function closeImage() {
       imageModal.classList.remove("active");
       imageModal.setAttribute("aria-hidden", "true");
-
       document.body.classList.remove("modal-open");
       modalImage.removeAttribute("src");
 
@@ -561,8 +494,7 @@
 
     galleryButtons.forEach(function(button) {
       button.addEventListener("click", function() {
-        const image = button.querySelector("img");
-        openImage(image);
+        openImage(button.querySelector("img"));
       });
     });
 
