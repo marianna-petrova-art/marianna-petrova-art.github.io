@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -110,7 +111,15 @@
       align-items: center;
       justify-content: center;
       color: #777;
+      overflow: hidden;
       transition: background 0.3s;
+    }
+
+    .project-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .project:hover .project-image {
@@ -257,7 +266,8 @@
 
         <div class="project">
           <div class="project-image">
-            KUPALA ARTWORK
+            <img src="images/Kupala(10).png"
+                 alt="Kupala visual novel artwork">
           </div>
           <h3>Kupala</h3>
           <p>Visual Novel · 2026</p>
