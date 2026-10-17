@@ -1,8 +1,4 @@
 
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -144,22 +140,18 @@
       line-height: 1.8;
     }
 
-    .languages {
-      max-width: 650px;
-    }
-
-    .language-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      padding: 15px 0;
-      border-bottom: 1px solid #333;
-      font-size: 14px;
-    }
-
-    .language-level {
+    .about-languages {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #333;
       color: #999;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .about-languages strong {
+      color: #ccc;
+      font-weight: normal;
     }
 
     /* CONTACT */
@@ -192,13 +184,6 @@
       color: #999;
     }
 
-    .social-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      gap: 12px 24px;
-    }
-
     footer {
       padding: 35px 7%;
       border-top: 1px solid #333;
@@ -227,11 +212,6 @@
 
       nav {
         gap: 18px;
-      }
-
-      .social-links {
-        flex-direction: column;
-        align-items: flex-start;
       }
     }
   </style>
@@ -333,29 +313,11 @@
           to be part of a team creating atmospheric
           and memorable games together.
         </p>
-      </div>
-    </section>
 
-    <section id="languages">
-      <h2>Languages</h2>
-
-      <div class="languages">
-
-        <div class="language-row">
-          <span>Russian</span>
-          <span class="language-level">Native</span>
+        <div class="about-languages">
+          <strong>Languages:</strong>
+          Russian (Native) · English (B2) · Estonian (B2)
         </div>
-
-        <div class="language-row">
-          <span>English</span>
-          <span class="language-level">B2</span>
-        </div>
-
-        <div class="language-row">
-          <span>Estonian</span>
-          <span class="language-level">B2</span>
-        </div>
-
       </div>
     </section>
 
@@ -386,36 +348,38 @@
 
         <div class="contact-row">
           <div class="contact-label">
-            RELEASED GAME
+            STEAM
           </div>
 
           <a href="https://store.steampowered.com/app/4037300/Kupala/"
              target="_blank"
              rel="noopener noreferrer">
-            Kupala on Steam ↗
+            Kupala ↗
           </a>
         </div>
 
         <div class="contact-row">
           <div class="contact-label">
-            OTHER PLATFORMS
+            ITCH.IO
           </div>
 
-          <div class="social-links">
+          <a href="https://tmbaig.itch.io/kupalademo"
+             target="_blank"
+             rel="noopener noreferrer">
+            Kupala Demo ↗
+          </a>
+        </div>
 
-            <a href="https://tmbaig.itch.io/kupalademo"
-               target="_blank"
-               rel="noopener noreferrer">
-              Kupala Demo on itch.io ↗
-            </a>
-
-            <a href="https://t.me/tmbaig"
-               target="_blank"
-               rel="noopener noreferrer">
-              @tmbaig ↗
-            </a>
-
+        <div class="contact-row">
+          <div class="contact-label">
+            TELEGRAM
           </div>
+
+          <a href="https://t.me/tmbaig"
+             target="_blank"
+             rel="noopener noreferrer">
+            @tmbaig ↗
+          </a>
         </div>
 
       </div>
