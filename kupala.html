@@ -1,0 +1,344 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Kupala | Marianna Petrova</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #111111;
+      color: #eeeeee;
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      padding: 28px 7%;
+      border-bottom: 1px solid #333;
+    }
+
+    .back-link {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: #ccc;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: #fff;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 55px 7% 70px;
+    }
+
+    h1 {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: clamp(55px, 9vw, 110px);
+      font-weight: 400;
+      line-height: 1.1;
+      margin: 0 0 10px;
+    }
+
+    .subtitle {
+      color: #999;
+      font-size: 15px;
+      margin: 0 0 35px;
+    }
+
+    .cover {
+      width: 100%;
+      max-height: 600px;
+      object-fit: cover;
+      display: block;
+      margin-bottom: 45px;
+    }
+
+    section {
+      margin-bottom: 45px;
+    }
+
+    h2 {
+      font-size: 17px;
+      font-weight: normal;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      border-bottom: 1px solid #444;
+      padding-bottom: 14px;
+      margin: 0 0 22px;
+    }
+
+    .description {
+      max-width: 750px;
+      color: #bbb;
+      font-size: 15px;
+    }
+
+    .description p {
+      margin: 0 0 18px;
+    }
+
+    .details {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      max-width: 750px;
+    }
+
+    .detail-label {
+      color: #888;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .detail-value {
+      color: #ddd;
+      font-size: 15px;
+    }
+
+    .trailer {
+      width: 100%;
+      max-width: 900px;
+      aspect-ratio: 16 / 9;
+      background: #222;
+      overflow: hidden;
+    }
+
+    .trailer iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .trailer-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+
+    .external-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .external-links a {
+      border: 1px solid #555;
+      padding: 12px 24px;
+      font-size: 12px;
+      letter-spacing: 1px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .external-links a:hover {
+      background: #eee;
+      color: #111;
+    }
+
+    footer {
+      padding: 28px 7%;
+      border-top: 1px solid #333;
+      color: #888;
+      font-size: 12px;
+    }
+
+    @media (max-width: 650px) {
+      main {
+        padding-top: 40px;
+      }
+
+      .details {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .cover {
+        margin-bottom: 30px;
+      }
+
+      section {
+        margin-bottom: 35px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html" class="back-link">
+      ← BACK TO PORTFOLIO
+    </a>
+  </header>
+
+  <main>
+
+    <h1>KUPALA</h1>
+
+    <p class="subtitle">
+      Horror Visual Novel · 2026 · Ren'Py
+    </p>
+
+    <img
+      class="cover"
+      src="images/Kupala (25).png"
+      alt="Kupala visual novel artwork"
+    >
+
+    <section>
+      <h2>About the Game</h2>
+
+      <div class="description">
+        <p>
+          Kupala is an atmospheric horror visual novel
+          inspired by Slavic folklore.
+        </p>
+
+        <p>
+          The story follows a family spending their summer
+          in the countryside, where familiar traditions,
+          old legends, and seemingly ordinary places
+          gradually reveal something unsettling.
+        </p>
+
+        <p>
+          The game combines hand-drawn black-and-white
+          illustrations, an unsettling atmosphere,
+          and a branching narrative with multiple endings.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Project Details</h2>
+
+      <div class="details">
+
+        <div>
+          <div class="detail-label">Release</div>
+          <div class="detail-value">2026</div>
+        </div>
+
+        <div>
+          <div class="detail-label">Engine</div>
+          <div class="detail-value">Ren'Py</div>
+        </div>
+
+        <div>
+          <div class="detail-label">Genre</div>
+          <div class="detail-value">Horror / Visual Novel</div>
+        </div>
+
+        <div>
+          <div class="detail-label">Platform</div>
+          <div class="detail-value">PC · Steam</div>
+        </div>
+
+        <div>
+          <div class="detail-label">Development</div>
+          <div class="detail-value">Solo Project</div>
+        </div>
+
+        <div>
+          <div class="detail-label">My Role</div>
+          <div class="detail-value">
+            Narrative Design · 2D Art · Programming
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>My Work</h2>
+
+      <div class="description">
+        <p>
+          I independently developed Kupala over the course
+          of approximately a year and a half.
+        </p>
+
+        <p>
+          I wrote the story and dialogue, created the
+          hand-drawn illustrations, implemented the game
+          in Ren'Py, and prepared it for release on Steam.
+        </p>
+
+        <p>
+          The project allowed me to combine my interests
+          in storytelling, illustration, and game development
+          into a complete playable experience.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Trailer</h2>
+
+      <div class="trailer">
+        <!-- YouTube trailer will be embedded here -->
+        <div class="trailer-placeholder">
+          GAME TRAILER
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Play the Game</h2>
+
+      <div class="external-links">
+        <a
+          href="https://store.steampowered.com/app/4037300/Kupala/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          VIEW ON STEAM ↗
+        </a>
+
+        <a
+          href="https://tmbaig.itch.io/kupalademo"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          PLAY DEMO ↗
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Marianna Petrova
+  </footer>
+
+</body>
+</html>
