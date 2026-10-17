@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Marianna Petrova | Portfolio</title>
 
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -62,11 +69,12 @@
     }
 
     h1 {
+      font-family: 'PT Serif', Georgia, serif;
       font-size: clamp(48px, 9vw, 110px);
-      line-height: 0.95;
-      letter-spacing: -4px;
+      line-height: 1.1;
+      letter-spacing: -2px;
       margin: 0 0 30px;
-      font-weight: 500;
+      font-weight: 400;
     }
 
     .subtitle {
@@ -128,6 +136,11 @@
       color: #bbb;
     }
 
+    .about p {
+      margin: 0 0 22px;
+      line-height: 1.8;
+    }
+
     .languages {
       max-width: 650px;
     }
@@ -162,11 +175,16 @@
       }
 
       h1 {
-        letter-spacing: -2px;
+        font-size: clamp(42px, 10vw, 65px);
+        letter-spacing: -1px;
       }
 
       .projects {
         grid-template-columns: 1fr;
+      }
+
+      nav {
+        gap: 18px;
       }
     }
   </style>
@@ -241,14 +259,33 @@
     <section id="about">
       <h2>About Me</h2>
 
-      <p class="about">
-        I'm an independent game creator and 2D artist
-        interested in atmospheric storytelling, character
-        design and interactive experiences.
-        I created and released my own visual novel, Kupala,
-        and continue exploring 2D art, 3D modeling and
-        game development.
-      </p>
+      <div class="about">
+        <p>
+          I'm an independent game developer and 2D artist
+          with a passion for creating atmospheric stories,
+          characters, and game worlds.
+        </p>
+
+        <p>
+          I spent a year and a half independently developing
+          my first game, <em>Kupala</em>, a horror visual novel
+          released on Steam in 2026. I was responsible for
+          the story, illustrations, programming, and preparing
+          the game for release.
+        </p>
+
+        <p>
+          I work with Ren'Py, Unity, Blender, Krita,
+          and Adobe Photoshop.
+        </p>
+
+        <p>
+          I'm currently working on my own projects, but
+          I'm also open to collaboration and would love
+          to be part of a team creating atmospheric
+          and memorable games together.
+        </p>
+      </div>
     </section>
 
     <section id="languages">
