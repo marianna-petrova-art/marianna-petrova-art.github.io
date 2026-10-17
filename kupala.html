@@ -26,6 +26,10 @@
       line-height: 1.7;
     }
 
+    body.modal-open {
+      overflow: hidden;
+    }
+
     a {
       color: inherit;
       text-decoration: none;
@@ -99,6 +103,82 @@
       margin: 0 0 18px;
     }
 
+    /* GALLERY */
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-button {
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: 0;
+      background: #222;
+      cursor: zoom-in;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+    }
+
+    .gallery-button img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .gallery-button:hover img,
+    .gallery-button:focus-visible img {
+      transform: scale(1.025);
+      filter: brightness(1.15);
+    }
+
+    /* ENLARGED IMAGE */
+
+    .image-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.94);
+      align-items: center;
+      justify-content: center;
+      padding: 50px 25px;
+    }
+
+    .image-modal.active {
+      display: flex;
+    }
+
+    .image-modal img {
+      display: block;
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 12px;
+      right: 22px;
+      border: none;
+      background: transparent;
+      color: white;
+      font-size: 36px;
+      font-weight: 300;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .modal-close:hover {
+      color: #aaa;
+    }
+
+    /* PROJECT DETAILS */
+
     .details {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -119,6 +199,8 @@
       font-size: 15px;
     }
 
+    /* TRAILER */
+
     .trailer {
       width: 100%;
       max-width: 900px;
@@ -133,6 +215,8 @@
       height: 100%;
       border: 0;
     }
+
+    /* STEAM LINKS */
 
     .external-links {
       display: flex;
@@ -170,12 +254,27 @@
         gap: 18px;
       }
 
+      .gallery {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
       .cover {
         margin-bottom: 30px;
       }
 
       section {
         margin-bottom: 35px;
+      }
+
+      .image-modal {
+        padding: 45px 10px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .gallery-button img {
+        transition: none;
       }
     }
   </style>
@@ -202,6 +301,8 @@
       src="images/Kupala (25).png"
       alt="Kupala visual novel artwork"
     >
+
+    <!-- ABOUT THE GAME -->
 
     <section>
       <h2>About the Game</h2>
@@ -247,6 +348,66 @@
       </div>
     </section>
 
+    <!-- GALLERY -->
+
+    <section>
+      <h2>Gallery</h2>
+
+      <div class="gallery">
+
+        <button class="gallery-button" type="button"
+          aria-label="Enlarge Kupala illustration 1">
+          <img
+            src="images/diavoldancekri.png"
+            alt="Kupala illustration 1"
+            loading="lazy">
+        </button>
+
+        <button class="gallery-button" type="button"
+          aria-label="Enlarge Kupala illustration 2">
+          <img
+            src="images/afterskazka.png"
+            alt="Kupala illustration 2"
+            loading="lazy">
+        </button>
+
+        <button class="gallery-button" type="button"
+          aria-label="Enlarge Kupala illustration 3">
+          <img
+            src="images/nightroom.png"
+            alt="Kupala illustration 3"
+            loading="lazy">
+        </button>
+
+        <button class="gallery-button" type="button"
+          aria-label="Enlarge Kupala illustration 4">
+          <img
+            src="images/nocpolana.png"
+            alt="Kupala illustration 4"
+            loading="lazy">
+        </button>
+
+        <button class="gallery-button" type="button"
+          aria-label="Enlarge Kupala illustration 5">
+          <img
+            src="images/ritualmavok.png"
+            alt="Kupala illustration 5"
+            loading="lazy">
+        </button>
+
+        <button class="gallery-button" type="button"
+          aria-label="Enlarge Kupala illustration 6">
+          <img
+            src="images/kotelvedma.png"
+            alt="Kupala illustration 6"
+            loading="lazy">
+        </button>
+
+      </div>
+    </section>
+
+    <!-- PROJECT DETAILS -->
+
     <section>
       <h2>Project Details</h2>
 
@@ -286,6 +447,8 @@
 
       </div>
     </section>
+
+    <!-- MY WORK -->
 
     <section>
       <h2>My Work</h2>
@@ -329,6 +492,8 @@
       </div>
     </section>
 
+    <!-- TRAILER -->
+
     <section>
       <h2>Trailer</h2>
 
@@ -343,6 +508,8 @@
         </iframe>
       </div>
     </section>
+
+    <!-- PLAY THE GAME -->
 
     <section>
       <h2>Play the Game</h2>
@@ -370,9 +537,105 @@
 
   </main>
 
+  <!-- ENLARGED IMAGE WINDOW -->
+
+  <div
+    class="image-modal"
+    id="imageModal"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Enlarged Kupala illustration"
+    aria-hidden="true">
+
+    <button
+      class="modal-close"
+      id="modalClose"
+      type="button"
+      aria-label="Close enlarged image">
+      &times;
+    </button>
+
+    <img id="modalImage" src="" alt="">
+
+  </div>
+
   <footer>
     © 2026 Marianna Petrova
   </footer>
+
+  <script>
+    const galleryButtons =
+      document.querySelectorAll(".gallery-button");
+
+    const imageModal =
+      document.getElementById("imageModal");
+
+    const modalImage =
+      document.getElementById("modalImage");
+
+    const modalClose =
+      document.getElementById("modalClose");
+
+    let previousFocus = null;
+
+    function openImage(image) {
+      previousFocus = document.activeElement;
+
+      modalImage.src = image.src;
+      modalImage.alt = image.alt;
+
+      imageModal.classList.add("active");
+      imageModal.setAttribute("aria-hidden", "false");
+
+      document.body.classList.add("modal-open");
+      modalClose.focus();
+    }
+
+    function closeImage() {
+      imageModal.classList.remove("active");
+      imageModal.setAttribute("aria-hidden", "true");
+
+      document.body.classList.remove("modal-open");
+
+      modalImage.removeAttribute("src");
+
+      if (previousFocus) {
+        previousFocus.focus();
+      }
+    }
+
+    galleryButtons.forEach(function(button) {
+      button.addEventListener("click", function() {
+        const image = button.querySelector("img");
+        openImage(image);
+      });
+    });
+
+    modalClose.addEventListener("click", closeImage);
+
+    imageModal.addEventListener("click", function(event) {
+      if (event.target === imageModal) {
+        closeImage();
+      }
+    });
+
+    document.addEventListener("keydown", function(event) {
+      if (
+        event.key === "Escape" &&
+        imageModal.classList.contains("active")
+      ) {
+        closeImage();
+      }
+
+      if (
+        event.key === "Tab" &&
+        imageModal.classList.contains("active")
+      ) {
+        event.preventDefault();
+        modalClose.focus();
+      }
+    });
+  </script>
 
 </body>
 </html>
