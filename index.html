@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -148,6 +149,8 @@
     .language-row {
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      gap: 20px;
       padding: 15px 0;
       border-bottom: 1px solid #333;
       font-size: 14px;
@@ -155,6 +158,42 @@
 
     .language-level {
       color: #999;
+    }
+
+    .contact-list {
+      max-width: 750px;
+    }
+
+    .contact-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      padding: 23px 0;
+      border-bottom: 1px solid #333;
+    }
+
+    .contact-label {
+      color: #999;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+    }
+
+    .contact-row a {
+      font-size: 14px;
+      text-align: right;
+      transition: color 0.2s;
+    }
+
+    .contact-row a:hover {
+      color: #999;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 18px;
     }
 
     footer {
@@ -185,6 +224,20 @@
 
       nav {
         gap: 18px;
+      }
+
+      .contact-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .contact-row a {
+        text-align: left;
+      }
+
+      .social-links {
+        justify-content: flex-start;
       }
     }
   </style>
@@ -280,11 +333,11 @@
         </p>
 
         <p>
-  I'm currently working on my own projects, but
-  I'm also open to joining a game studio or
-  collaborating with other creators. I'd love
-  to be part of a team creating atmospheric
-  and memorable games together.
+          I'm currently working on my own projects, but
+          I'm also open to joining a game studio or
+          collaborating with other creators. I'd love
+          to be part of a team creating atmospheric
+          and memorable games together.
         </p>
       </div>
     </section>
@@ -315,8 +368,63 @@
     <section id="contact">
       <h2>Contact</h2>
 
-      <p>Email: your-email@example.com</p>
-      <p>Steam · itch.io · LinkedIn</p>
+      <div class="contact-list">
+
+        <div class="contact-row">
+          <span class="contact-label">
+            JOB OPPORTUNITIES & COLLABORATIONS
+          </span>
+
+          <a href="mailto:marianna.petrova.02@gmail.com">
+            Personal Email ↗
+          </a>
+        </div>
+
+        <div class="contact-row">
+          <span class="contact-label">
+            KUPALA / GAME INQUIRIES
+          </span>
+
+          <a href="mailto:kupalavn@gmail.com">
+            Game Email ↗
+          </a>
+        </div>
+
+        <div class="contact-row">
+          <span class="contact-label">
+            RELEASED GAME
+          </span>
+
+          <a href="https://store.steampowered.com/app/4037300/Kupala/"
+             target="_blank"
+             rel="noopener noreferrer">
+            Kupala on Steam ↗
+          </a>
+        </div>
+
+        <div class="contact-row">
+          <span class="contact-label">
+            OTHER PLATFORMS
+          </span>
+
+          <div class="social-links">
+
+            <a href="https://tmbaig.itch.io/kupalademo"
+               target="_blank"
+               rel="noopener noreferrer">
+              itch.io ↗
+            </a>
+
+            <a href="https://t.me/tmbaig"
+               target="_blank"
+               rel="noopener noreferrer">
+              Telegram ↗
+            </a>
+
+          </div>
+        </div>
+
+      </div>
     </section>
 
   </main>
