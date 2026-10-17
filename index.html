@@ -32,15 +32,10 @@
 
     header {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: center;
       padding: 28px 7%;
       border-bottom: 1px solid #333;
-    }
-
-    .logo {
-      font-size: 20px;
-      font-weight: bold;
     }
 
     nav {
@@ -203,8 +198,7 @@
 
     @media (max-width: 650px) {
       header {
-        flex-direction: column;
-        gap: 20px;
+        justify-content: center;
       }
 
       nav {
@@ -239,8 +233,6 @@
 <body>
 
   <header>
-    <a class="logo" href="#">MP.</a>
-
     <nav>
       <a href="#work">WORK</a>
       <a href="#about">ABOUT</a>
