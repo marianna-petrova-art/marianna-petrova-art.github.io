@@ -4,14 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>2D Art & Illustration | Marianna Petrova</title>
 
   <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -21,9 +26,14 @@
       line-height: 1.7;
     }
 
-    body.modal-open { overflow: hidden; }
+    body.modal-open {
+      overflow: hidden;
+    }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     header {
       padding: 28px 7%;
@@ -36,7 +46,9 @@
       color: #ccc;
     }
 
-    .back-link:hover { color: #fff; }
+    .back-link:hover {
+      color: #fff;
+    }
 
     main {
       max-width: 1200px;
@@ -44,7 +56,11 @@
       padding: 55px 7% 75px;
     }
 
-    .intro { margin-bottom: 55px; }
+    /* INTRO */
+
+    .intro {
+      margin-bottom: 55px;
+    }
 
     h1 {
       font-family: 'PT Serif', Georgia, serif;
@@ -62,7 +78,11 @@
       margin: 0;
     }
 
-    .art-section { margin-bottom: 60px; }
+    /* SECTIONS */
+
+    .art-section {
+      margin-bottom: 60px;
+    }
 
     h2 {
       font-size: 17px;
@@ -81,13 +101,17 @@
       margin: 0 0 25px;
     }
 
+    /* GALLERY */
+
     .gallery {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px 18px;
+      gap: 18px;
     }
 
-    .artwork { min-width: 0; }
+    .artwork {
+      min-width: 0;
+    }
 
     .gallery-button {
       display: block;
@@ -105,7 +129,7 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
-      transition: filter .2s ease;
+      transition: filter 0.2s ease;
     }
 
     .gallery-button:hover img,
@@ -113,11 +137,7 @@
       filter: brightness(1.1);
     }
 
-    .artwork-title {
-      margin: 9px 0 0;
-      color: #ccc;
-      font-size: 13px;
-    }
+    /* CENTER LAST IMAGE IN ODD GALLERIES */
 
     .gallery .artwork:last-child:nth-child(odd) {
       grid-column: 1 / -1;
@@ -125,18 +145,22 @@
       justify-self: center;
     }
 
+    /* FULLSCREEN IMAGE VIEW */
+
     .image-modal {
       display: none;
       position: fixed;
       inset: 0;
       z-index: 1000;
-      background: rgba(0, 0, 0, .96);
+      background: rgba(0, 0, 0, 0.96);
       align-items: center;
       justify-content: center;
       padding: 50px 25px;
     }
 
-    .image-modal.active { display: flex; }
+    .image-modal.active {
+      display: flex;
+    }
 
     .image-modal img {
       display: block;
@@ -151,14 +175,18 @@
       right: 22px;
       border: none;
       background: transparent;
-      color: white;
+      color: #fff;
       font-size: 36px;
       font-weight: 300;
       cursor: pointer;
       z-index: 1001;
     }
 
-    .modal-close:hover { color: #aaa; }
+    .modal-close:hover {
+      color: #aaa;
+    }
+
+    /* PROJECT LINK */
 
     .project-note {
       border-top: 1px solid #444;
@@ -174,7 +202,9 @@
       text-underline-offset: 4px;
     }
 
-    .project-note a:hover { color: #aaa; }
+    .project-note a:hover {
+      color: #aaa;
+    }
 
     footer {
       padding: 28px 7%;
@@ -183,14 +213,24 @@
       font-size: 12px;
     }
 
+    /* MOBILE */
+
     @media (max-width: 650px) {
-      main { padding-top: 35px; }
-      .intro { margin-bottom: 40px; }
-      .art-section { margin-bottom: 45px; }
+      main {
+        padding-top: 35px;
+      }
+
+      .intro {
+        margin-bottom: 40px;
+      }
+
+      .art-section {
+        margin-bottom: 45px;
+      }
 
       .gallery {
         grid-template-columns: 1fr;
-        gap: 22px;
+        gap: 18px;
       }
 
       .gallery .artwork:last-child:nth-child(odd) {
@@ -198,11 +238,15 @@
         width: 100%;
       }
 
-      .image-modal { padding: 45px 10px; }
+      .image-modal {
+        padding: 45px 10px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .gallery-button img { transition: none; }
+      .gallery-button img {
+        transition: none;
+      }
     }
   </style>
 </head>
@@ -217,8 +261,11 @@
 
   <main>
 
+    <!-- INTRODUCTION -->
+
     <div class="intro">
       <h1>2D ART &<br>ILLUSTRATION</h1>
+
       <p>
         A collection of my digital illustrations,
         including character portraits, atmospheric
@@ -227,10 +274,12 @@
       </p>
     </div>
 
-    <!-- PORTRAITS -->
+    <!-- PORTRAITS & CHARACTERS -->
 
     <section class="art-section">
+
       <h2>Portraits & Characters</h2>
+
       <p class="section-description">
         Character illustrations exploring facial expressions,
         emotions, and dramatic lighting.
@@ -239,47 +288,54 @@
       <div class="gallery">
 
         <div class="artwork">
-          <button class="gallery-button" type="button">
-            <img src="images/anya.png" alt="Sad girl portrait" loading="lazy">
+          <button class="gallery-button" type="button" aria-label="Enlarge Anya illustration">
+            <img src="images/anya.png"
+                 alt="Anya character illustration"
+                 loading="lazy">
           </button>
-          <p class="artwork-title">Anya — Sadness</p>
         </div>
 
         <div class="artwork">
-          <button class="gallery-button" type="button">
-            <img src="images/grandma.png" alt="Smiling elderly woman" loading="lazy">
+          <button class="gallery-button" type="button" aria-label="Enlarge grandmother illustration">
+            <img src="images/grandma.png"
+                 alt="Grandmother character illustration"
+                 loading="lazy">
           </button>
-          <p class="artwork-title">Grandmother — Warmth</p>
         </div>
 
         <div class="artwork">
-          <button class="gallery-button" type="button">
-            <img src="images/killdevbad.png" alt="Frightened woman in darkness" loading="lazy">
+          <button class="gallery-button" type="button" aria-label="Enlarge character illustration">
+            <img src="images/killdevbad.png"
+                 alt="Frightened character in darkness"
+                 loading="lazy">
           </button>
-          <p class="artwork-title">Fear & Darkness</p>
         </div>
 
         <div class="artwork">
-          <button class="gallery-button" type="button">
-            <img src="images/mamangry.png" alt="Angry woman portrait" loading="lazy">
+          <button class="gallery-button" type="button" aria-label="Enlarge mother illustration">
+            <img src="images/mamangry.png"
+                 alt="Angry mother character illustration"
+                 loading="lazy">
           </button>
-          <p class="artwork-title">Anger</p>
         </div>
 
         <div class="artwork">
-          <button class="gallery-button" type="button">
-            <img src="images/sickgirl.png" alt="Sick girl character illustration" loading="lazy">
+          <button class="gallery-button" type="button" aria-label="Enlarge sick girl illustration">
+            <img src="images/sickgirl.png"
+                 alt="Sick girl character illustration"
+                 loading="lazy">
           </button>
-          <p class="artwork-title">Sick Girl</p>
         </div>
 
       </div>
     </section>
 
-    <!-- ENVIRONMENTS -->
+    <!-- ENVIRONMENT ART -->
 
     <section class="art-section">
+
       <h2>Environment Art</h2>
+
       <p class="section-description">
         Atmospheric landscapes and environments
         inspired by Slavic folklore and rural life.
@@ -288,47 +344,54 @@
       <div class="gallery">
 
         <div class="artwork">
-          <button class="gallery-button" type="button">
-            <img src="images/nocpolana.png" alt="Moonlit forest ritual" loading="lazy">
+          <button class="gallery-button" type="button" aria-label="Enlarge moonlit ritual illustration">
+            <img src="images/nocpolana.png"
+                 alt="Moonlit forest ritual"
+                 loading="lazy">
           </button>
-          <p class="artwork-title">Moonlit Ritual</p>
         </div>
 
         <div class="artwork">
-          <button class="gallery-button" type="button">
-            <img src="images/ozerokonc.png" alt="Lake landscape" loading="lazy">
+          <button class="gallery-button" type="button" aria-label="Enlarge lake illustration">
+            <img src="images/ozerokonc.png"
+                 alt="Lake landscape"
+                 loading="lazy">
           </button>
-          <p class="artwork-title">Lakeside</p>
         </div>
 
         <div class="artwork">
-          <button class="gallery-button" type="button">
-            <img src="images/pole.png" alt="Field of daisies" loading="lazy">
+          <button class="gallery-button" type="button" aria-label="Enlarge field illustration">
+            <img src="images/pole.png"
+                 alt="Field of daisies"
+                 loading="lazy">
           </button>
-          <p class="artwork-title">Summer Field</p>
         </div>
 
         <div class="artwork">
-          <button class="gallery-button" type="button">
-            <img src="images/village.png" alt="Traditional countryside village" loading="lazy">
+          <button class="gallery-button" type="button" aria-label="Enlarge village illustration">
+            <img src="images/village.png"
+                 alt="Countryside village"
+                 loading="lazy">
           </button>
-          <p class="artwork-title">The Village</p>
         </div>
 
         <div class="artwork">
-          <button class="gallery-button" type="button">
-            <img src="images/lesnoc.png" alt="Forest at night" loading="lazy">
+          <button class="gallery-button" type="button" aria-label="Enlarge night forest illustration">
+            <img src="images/lesnoc.png"
+                 alt="Forest at night"
+                 loading="lazy">
           </button>
-          <p class="artwork-title">Night Forest</p>
         </div>
 
       </div>
     </section>
 
-    <!-- INTERIORS -->
+    <!-- INTERIORS & PROPS -->
 
     <section class="art-section">
+
       <h2>Interiors & Props</h2>
+
       <p class="section-description">
         Interior illustrations exploring perspective,
         atmosphere, lighting, and everyday objects.
@@ -337,78 +400,91 @@
       <div class="gallery">
 
         <div class="artwork">
-          <button class="gallery-button" type="button">
-            <img src="images/bedroom.png" alt="Traditional countryside bedroom" loading="lazy">
+          <button class="gallery-button" type="button" aria-label="Enlarge bedroom illustration">
+            <img src="images/bedroom.png"
+                 alt="Traditional countryside bedroom"
+                 loading="lazy">
           </button>
-          <p class="artwork-title">Countryside Bedroom</p>
         </div>
 
         <div class="artwork">
-          <button class="gallery-button" type="button">
-            <img src="images/nightroom.png" alt="Bedroom illuminated by moonlight" loading="lazy">
+          <button class="gallery-button" type="button" aria-label="Enlarge moonlit bedroom illustration">
+            <img src="images/nightroom.png"
+                 alt="Bedroom illuminated by moonlight"
+                 loading="lazy">
           </button>
-          <p class="artwork-title">Moonlit Bedroom</p>
         </div>
 
         <div class="artwork">
-          <button class="gallery-button" type="button">
-            <img src="images/komnatalena.png" alt="Traditional wooden house interior" loading="lazy">
+          <button class="gallery-button" type="button" aria-label="Enlarge house interior illustration">
+            <img src="images/komnatalena.png"
+                 alt="Traditional wooden house interior"
+                 loading="lazy">
           </button>
-          <p class="artwork-title">Traditional House Interior</p>
         </div>
 
         <div class="artwork">
-          <button class="gallery-button" type="button">
-            <img src="images/vecherroditeli.png" alt="Family kitchen scene" loading="lazy">
+          <button class="gallery-button" type="button" aria-label="Enlarge kitchen illustration">
+            <img src="images/vecherroditeli.png"
+                 alt="Family kitchen scene"
+                 loading="lazy">
           </button>
-          <p class="artwork-title">Kitchen Scene</p>
         </div>
 
         <div class="artwork">
-          <button class="gallery-button" type="button">
-            <img src="images/stolruka.png" alt="Drawer with old books and objects" loading="lazy">
+          <button class="gallery-button" type="button" aria-label="Enlarge props illustration">
+            <img src="images/stolruka.png"
+                 alt="Drawer with books and objects"
+                 loading="lazy">
           </button>
-          <p class="artwork-title">Objects & Details</p>
         </div>
 
       </div>
     </section>
 
-    <!-- LINOCUT -->
+    <!-- LINOCUT-STYLE ILLUSTRATIONS -->
 
     <section class="art-section">
+
       <h2>Linocut-Style Illustrations</h2>
+
       <p class="section-description">
-        Black-and-white digital illustrations inspired
-        by traditional linocut printmaking, created
-        for the folklore stories featured in Kupala.
+        Black-and-white illustrations created for the
+        folklore tales featured in my horror visual novel
+        <em>Kupala</em>, inspired by traditional linocut
+        printmaking.
       </p>
 
       <div class="gallery">
 
         <div class="artwork">
-          <button class="gallery-button" type="button">
-            <img src="images/skazka1.png" alt="Woman preparing a potion" loading="lazy">
+          <button class="gallery-button" type="button" aria-label="Enlarge first folklore illustration">
+            <img src="images/skazka1.png"
+                 alt="Folklore illustration of a woman preparing a potion"
+                 loading="lazy">
           </button>
-          <p class="artwork-title">The Herbalist</p>
         </div>
 
         <div class="artwork">
-          <button class="gallery-button" type="button">
-            <img src="images/skazka2.png" alt="Folklore ritual near an old tree" loading="lazy">
+          <button class="gallery-button" type="button" aria-label="Enlarge second folklore illustration">
+            <img src="images/skazka2.png"
+                 alt="Folklore illustration of a ritual near a tree"
+                 loading="lazy">
           </button>
-          <p class="artwork-title">The Ritual</p>
         </div>
 
         <div class="artwork">
-          <button class="gallery-button" type="button">
-            <img src="images/skazka4.png" alt="Old woman and a cradle" loading="lazy">
+          <button class="gallery-button" type="button" aria-label="Enlarge third folklore illustration">
+            <img src="images/skazka4.png"
+                 alt="Folklore illustration of an old woman and a cradle"
+                 loading="lazy">
           </button>
-          <p class="artwork-title">The Old Woman</p>
         </div>
 
       </div>
     </section>
+
+    <!-- PROJECT CREDIT -->
 
     <div class="project-note">
       All illustrations featured on this page were
@@ -419,7 +495,7 @@
 
   </main>
 
-  <!-- IMAGE VIEWER -->
+  <!-- FULLSCREEN IMAGE VIEW -->
 
   <div class="image-modal"
        id="imageModal"
@@ -444,10 +520,17 @@
   </footer>
 
   <script>
-    const galleryButtons = document.querySelectorAll(".gallery-button");
-    const imageModal = document.getElementById("imageModal");
-    const modalImage = document.getElementById("modalImage");
-    const modalClose = document.getElementById("modalClose");
+    const galleryButtons =
+      document.querySelectorAll(".gallery-button");
+
+    const imageModal =
+      document.getElementById("imageModal");
+
+    const modalImage =
+      document.getElementById("modalImage");
+
+    const modalClose =
+      document.getElementById("modalClose");
 
     let previousFocus = null;
 
@@ -471,29 +554,38 @@
       document.body.classList.remove("modal-open");
       modalImage.removeAttribute("src");
 
-      if (previousFocus) previousFocus.focus();
+      if (previousFocus) {
+        previousFocus.focus();
+      }
     }
 
     galleryButtons.forEach(function(button) {
       button.addEventListener("click", function() {
-        openImage(button.querySelector("img"));
+        const image = button.querySelector("img");
+        openImage(image);
       });
     });
 
     modalClose.addEventListener("click", closeImage);
 
     imageModal.addEventListener("click", function(event) {
-      if (event.target === imageModal) closeImage();
+      if (event.target === imageModal) {
+        closeImage();
+      }
     });
 
     document.addEventListener("keydown", function(event) {
-      if (event.key === "Escape" &&
-          imageModal.classList.contains("active")) {
+      if (
+        event.key === "Escape" &&
+        imageModal.classList.contains("active")
+      ) {
         closeImage();
       }
 
-      if (event.key === "Tab" &&
-          imageModal.classList.contains("active")) {
+      if (
+        event.key === "Tab" &&
+        imageModal.classList.contains("active")
+      ) {
         event.preventDefault();
         modalClose.focus();
       }
