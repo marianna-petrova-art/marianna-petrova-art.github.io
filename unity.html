@@ -1,0 +1,725 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unity 3D Project | Marianna Petrova</title>
+
+  <style>
+    :root {
+      --bg: #111113;
+      --surface: #1b1b1e;
+      --text: #eeeeee;
+      --muted: #aaa8ad;
+      --border: #343438;
+      --accent: #c9b9aa;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 28px;
+    }
+
+    header {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .back {
+      color: var(--muted);
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .back:hover {
+      color: white;
+    }
+
+    .intro {
+      padding: 65px 0 15px;
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(42px, 7vw, 76px);
+      font-weight: normal;
+      line-height: 1.1;
+      margin: 18px 0 25px;
+    }
+
+    .tools {
+      color: var(--accent);
+      font-size: 14px;
+      letter-spacing: 1px;
+      margin-bottom: 30px;
+    }
+
+    .description {
+      color: #c7c5c8;
+      font-size: 16px;
+      max-width: 760px;
+    }
+
+    .description p {
+      margin: 0 0 14px;
+    }
+
+    section.content-section {
+      padding: 25px 0 35px;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 20px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 18px;
+      margin-bottom: 25px;
+    }
+
+    h2 {
+      font-family: Georgia, serif;
+      font-size: 32px;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .section-note {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .skill {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 25px;
+    }
+
+    .skill h3 {
+      font-size: 17px;
+      font-weight: normal;
+      color: var(--accent);
+      margin: 0 0 12px;
+    }
+
+    .skill p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #c7c5c8;
+      margin: 0;
+    }
+
+    .learning {
+      max-width: 780px;
+      color: #c7c5c8;
+      font-size: 16px;
+    }
+
+    .learning p {
+      margin: 0 0 15px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .gallery-item {
+      min-width: 0;
+    }
+
+    .image-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      position: relative;
+      cursor: zoom-in;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .image-box:hover img {
+      transform: scale(1.035);
+    }
+
+    .placeholder {
+      display: none;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #777;
+      font-size: 13px;
+      letter-spacing: 1px;
+      padding: 20px;
+    }
+
+    .gallery-item h3 {
+      font-size: 16px;
+      font-weight: normal;
+      margin: 12px 0 4px;
+    }
+
+    .gallery-item p {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 0;
+    }
+
+    .video-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      color: var(--muted);
+    }
+
+    .video-box video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .video-placeholder {
+      text-align: center;
+      padding: 30px;
+    }
+
+    .video-placeholder .play-icon {
+      font-size: 40px;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .video-placeholder p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .video-description {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 14px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 0;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 65px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* Image viewer */
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.94);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 65px 25px;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 95%;
+      max-height: 90%;
+      object-fit: contain;
+    }
+
+    .close-lightbox {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 35px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 700px) {
+      .skills,
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .container {
+        padding: 0 20px;
+      }
+
+      .intro {
+        padding: 50px 0 10px;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        MARIANNA PETROVA
+      </a>
+
+      <a href="index.html" class="back">
+        ← Back to Portfolio
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- INTRODUCTION -->
+
+    <section class="intro">
+
+      <div class="eyebrow">
+        Portfolio / Game Development
+      </div>
+
+      <h1>Unity 3D Project</h1>
+
+      <div class="tools">
+        Unity · C# · 3D Game Development
+      </div>
+
+      <div class="description">
+
+        <p>
+          This is a small learning project I created
+          to explore 3D game development in Unity.
+        </p>
+
+        <p>
+          I used free 3D assets to build a small
+          environment and focused on making it
+          interactive. As I worked on the project,
+          I gradually learned how to work with the
+          Unity editor, C# scripts, and different
+          gameplay mechanics.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- WHAT I WORKED ON -->
+
+    <section class="content-section">
+
+      <div class="section-heading">
+        <h2>What I Worked On</h2>
+        <span class="section-note">
+          Gameplay & Environment
+        </span>
+      </div>
+
+      <div class="skills">
+
+        <article class="skill">
+          <h3>Environment & Lighting</h3>
+          <p>
+            I learned how to import and arrange
+            3D models, decorate rooms, adjust
+            objects and materials, and work
+            with lighting to create the
+            atmosphere I wanted.
+          </p>
+        </article>
+
+        <article class="skill">
+          <h3>Player Controls</h3>
+          <p>
+            I added first-person movement and
+            camera controls, allowing the player
+            to walk around and explore the
+            environment.
+          </p>
+        </article>
+
+        <article class="skill">
+          <h3>Object Interactions</h3>
+          <p>
+            I made it possible to pick up, carry,
+            and drop objects, open doors, drawers,
+            and windows, and interact with
+            different items, including food
+            and kitchen objects.
+          </p>
+        </article>
+
+        <article class="skill">
+          <h3>Interface & Messages</h3>
+          <p>
+            I created on-screen instructions
+            that change depending on the player's
+            actions. For example, when holding
+            an object, the interface shows
+            that pressing E will drop it.
+            I also added contextual messages
+            and character thoughts.
+          </p>
+        </article>
+
+        <article class="skill">
+          <h3>Item Combinations & Timed Actions</h3>
+          <p>
+            I experimented with combining
+            ingredients to prepare a sandwich,
+            as well as timed interactions
+            such as washing hands and eating,
+            with progress bars.
+          </p>
+        </article>
+
+        <article class="skill">
+          <h3>Game Logic & C# Basics</h3>
+          <p>
+            I learned how to use conditions
+            in scripts to control when actions
+            become available. For example,
+            the player must wash their hands
+            before they can eat. I also worked
+            on preventing conflicting interactions.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- LEARNING EXPERIENCE -->
+
+    <section class="content-section">
+
+      <div class="section-heading">
+        <h2>My Learning Experience</h2>
+      </div>
+
+      <div class="learning">
+
+        <p>
+          I used ChatGPT to help me understand
+          Unity and C# scripts throughout the
+          project. Over time, I became comfortable
+          navigating the Unity editor, setting up
+          objects and components, adjusting the
+          environment, and making small changes
+          to existing scripts independently.
+        </p>
+
+        <p>
+          I'm continuing to learn C# and enjoy
+          experimenting with new gameplay mechanics.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- SCREENSHOTS -->
+
+    <section class="content-section">
+
+      <div class="section-heading">
+        <h2>Project Screenshots</h2>
+        <span class="section-note">
+          Unity Editor & Gameplay
+        </span>
+      </div>
+
+      <div class="gallery">
+
+        <article class="gallery-item">
+          <div class="image-box">
+            <img
+              src="images/unity-environment.jpg"
+              alt="Unity environment"
+              loading="lazy"
+            >
+            <div class="placeholder">
+              ENVIRONMENT
+            </div>
+          </div>
+          <h3>3D Environment</h3>
+          <p>Scene building and lighting</p>
+        </article>
+
+        <article class="gallery-item">
+          <div class="image-box">
+            <img
+              src="images/unity-interaction.jpg"
+              alt="Object interaction in Unity"
+              loading="lazy"
+            >
+            <div class="placeholder">
+              OBJECT INTERACTION
+            </div>
+          </div>
+          <h3>Object Interactions</h3>
+          <p>Picking up and using objects</p>
+        </article>
+
+        <article class="gallery-item">
+          <div class="image-box">
+            <img
+              src="images/unity-kitchen.jpg"
+              alt="Kitchen gameplay in Unity"
+              loading="lazy"
+            >
+            <div class="placeholder">
+              KITCHEN GAMEPLAY
+            </div>
+          </div>
+          <h3>Kitchen Gameplay</h3>
+          <p>Items and gameplay mechanics</p>
+        </article>
+
+        <article class="gallery-item">
+          <div class="image-box">
+            <img
+              src="images/unity-ui.jpg"
+              alt="Unity gameplay interface"
+              loading="lazy"
+            >
+            <div class="placeholder">
+              GAMEPLAY INTERFACE
+            </div>
+          </div>
+          <h3>Gameplay UI</h3>
+          <p>Interaction prompts and progress bars</p>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- VIDEO -->
+
+    <section class="content-section">
+
+      <div class="section-heading">
+        <h2>Gameplay Demonstration</h2>
+        <span class="section-note">
+          Short Video
+        </span>
+      </div>
+
+      <div class="video-box" id="videoBox">
+
+        <div class="video-placeholder" id="videoPlaceholder">
+          <div class="play-icon">▷</div>
+          <p>Gameplay video coming soon</p>
+        </div>
+
+      </div>
+
+      <p class="video-description">
+        A short demonstration of the interactive
+        systems I created while learning Unity.
+      </p>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Marianna Petrova</span>
+      <a href="index.html">Back to Portfolio ↑</a>
+    </div>
+  </footer>
+
+  <!-- IMAGE LIGHTBOX -->
+
+  <div class="lightbox" id="lightbox">
+
+    <button
+      class="close-lightbox"
+      id="closeLightbox"
+      aria-label="Close image"
+    >
+      ×
+    </button>
+
+    <img
+      id="lightboxImage"
+      alt="Enlarged Unity screenshot"
+    >
+
+  </div>
+
+  <script>
+    const lightbox =
+      document.getElementById("lightbox");
+
+    const lightboxImage =
+      document.getElementById("lightboxImage");
+
+    const closeButton =
+      document.getElementById("closeLightbox");
+
+    // Screenshots
+
+    document.querySelectorAll(".image-box").forEach(box => {
+      const img = box.querySelector("img");
+      const placeholder =
+        box.querySelector(".placeholder");
+
+      img.addEventListener("error", () => {
+        img.style.display = "none";
+        placeholder.style.display = "flex";
+        box.style.cursor = "default";
+      });
+
+      img.addEventListener("click", () => {
+        if (!img.complete || img.naturalWidth === 0) {
+          return;
+        }
+
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt;
+        lightbox.classList.add("open");
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightboxImage.removeAttribute("src");
+    }
+
+    closeButton.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", event => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closeLightbox();
+      }
+    });
+
+    // Optional gameplay video.
+    // Put unity-gameplay.mp4 in the videos folder.
+
+    const videoPath = "videos/unity-gameplay.mp4";
+    const videoBox = document.getElementById("videoBox");
+    const videoPlaceholder =
+      document.getElementById("videoPlaceholder");
+
+    const video = document.createElement("video");
+    video.controls = true;
+    video.preload = "metadata";
+    video.playsInline = true;
+
+    const source = document.createElement("source");
+    source.src = videoPath;
+    source.type = "video/mp4";
+
+    video.appendChild(source);
+
+    video.addEventListener("loadedmetadata", () => {
+      videoPlaceholder.style.display = "none";
+      videoBox.appendChild(video);
+    });
+
+    video.addEventListener("error", () => {
+      video.remove();
+    });
+
+    source.addEventListener("error", () => {
+      video.remove();
+    });
+
+    video.load();
+  </script>
+
+</body>
+</html>
