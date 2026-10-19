@@ -321,6 +321,7 @@
 
       <div class="gallery">
 
+        <!-- WRITING DESK -->
         <article class="gallery-item">
           <div class="image-box">
             <img
@@ -329,6 +330,7 @@
               alt="Writing desk 3D model"
               loading="lazy"
             >
+
             <div class="placeholder">
               WRITING DESK
             </div>
@@ -338,6 +340,7 @@
           <p>Blender · Furniture Modeling</p>
         </article>
 
+        <!-- BOOKSHELF -->
         <article class="gallery-item">
           <div class="image-box has-hover">
 
@@ -351,20 +354,20 @@
             <img
               class="hover-image"
               src="screen bookshfull(1).jpg"
-              alt="Bookshelf in Blender with Transform panel"
+              alt="Bookshelf alternative view"
               loading="lazy"
             >
 
             <div class="placeholder">
               BOOKSHELF
             </div>
-
           </div>
 
           <h3>Bookshelf</h3>
           <p>Blender · Environment Prop</p>
         </article>
 
+        <!-- TOY BLOCKS -->
         <article class="gallery-item">
           <div class="image-box">
             <img
@@ -373,6 +376,7 @@
               alt="Toy blocks 3D model"
               loading="lazy"
             >
+
             <div class="placeholder">
               TOY BLOCKS
             </div>
@@ -382,14 +386,24 @@
           <p>Blender · Simple Props</p>
         </article>
 
+        <!-- WOODEN TABLE -->
         <article class="gallery-item">
-          <div class="image-box">
+          <div class="image-box has-hover">
+
             <img
               class="main-image"
-              src="images/simple-table.jpg"
+              src="table-main-matched.jpg"
               alt="Wooden table 3D model"
               loading="lazy"
             >
+
+            <img
+              class="hover-image"
+              src="table-hover-matched.jpg"
+              alt="Wooden table from below"
+              loading="lazy"
+            >
+
             <div class="placeholder">
               WOODEN TABLE
             </div>
@@ -441,7 +455,7 @@
       const hoverImage = box.querySelector(".hover-image");
       const placeholder = box.querySelector(".placeholder");
 
-      mainImage.addEventListener("error", () => {
+      function showPlaceholder() {
         mainImage.style.display = "none";
 
         if (hoverImage) {
@@ -450,13 +464,25 @@
 
         placeholder.style.display = "flex";
         box.style.cursor = "default";
-      });
+      }
+
+      mainImage.addEventListener("error", showPlaceholder);
+
+      if (mainImage.complete && mainImage.naturalWidth === 0) {
+        showPlaceholder();
+      }
 
       if (hoverImage) {
-        hoverImage.addEventListener("error", () => {
+        function disableHover() {
           hoverImage.style.display = "none";
           box.classList.remove("has-hover");
-        });
+        }
+
+        hoverImage.addEventListener("error", disableHover);
+
+        if (hoverImage.complete && hoverImage.naturalWidth === 0) {
+          disableHover();
+        }
       }
 
       box.addEventListener("click", () => {
