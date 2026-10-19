@@ -1,26 +1,505 @@
-<article class="gallery-item">
-  <div class="image-box has-hover">
 
-    <img
-      class="main-image"
-      src="screen books (1).jpg"
-      alt="Bookshelf 3D model"
-      loading="lazy"
-    >
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blender 3D Models | Marianna Petrova</title>
 
-    <img
-      class="hover-image"
-      src="screen bookshfull(1).jpg"
-      alt="Bookshelf alternative view in Blender"
-      loading="lazy"
-    >
+  <style>
+    :root {
+      --bg: #111113;
+      --surface: #1b1b1e;
+      --text: #eeeeee;
+      --muted: #aaa8ad;
+      --border: #343438;
+      --accent: #c8cbd0;
+    }
 
-    <div class="placeholder">
-      BOOKSHELF
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 28px;
+    }
+
+    header {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .back {
+      color: var(--muted);
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .back:hover {
+      color: white;
+    }
+
+    .intro {
+      padding: 65px 0 15px;
+      max-width: 800px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(42px, 7vw, 76px);
+      font-weight: normal;
+      line-height: 1.1;
+      margin: 18px 0 25px;
+    }
+
+    .tools {
+      color: var(--accent);
+      font-size: 14px;
+      letter-spacing: 1px;
+      margin-bottom: 30px;
+    }
+
+    .description {
+      color: #c7c5c8;
+      font-size: 16px;
+      max-width: 760px;
+    }
+
+    .description p {
+      margin: 0 0 14px;
+    }
+
+    .gallery-section {
+      padding: 10px 0 100px;
+    }
+
+    .section-heading {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 18px;
+      margin-bottom: 25px;
+    }
+
+    h2 {
+      font-family: Georgia, serif;
+      font-size: 32px;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .gallery-item {
+      min-width: 0;
+    }
+
+    .image-box {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      cursor: zoom-in;
+    }
+
+    .image-box img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.4s ease;
+    }
+
+    .image-box .hover-image {
+      opacity: 0;
+    }
+
+    @media (hover: hover) {
+      .image-box.has-hover:hover .main-image {
+        opacity: 0;
+      }
+
+      .image-box.has-hover:hover .hover-image {
+        opacity: 1;
+      }
+    }
+
+    .placeholder {
+      display: none;
+      position: absolute;
+      inset: 0;
+      align-items: center;
+      justify-content: center;
+      color: #777;
+      text-align: center;
+      font-size: 13px;
+      letter-spacing: 1px;
+      padding: 20px;
+    }
+
+    .gallery-item h3 {
+      font-size: 16px;
+      font-weight: normal;
+      margin: 12px 0 4px;
+    }
+
+    .gallery-item p {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 0;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.94);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 65px 25px;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 95%;
+      max-height: 90%;
+      object-fit: contain;
+    }
+
+    .close-lightbox {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 35px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        padding: 0 20px;
+      }
+
+      .intro {
+        padding: 50px 0 10px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        MARIANNA PETROVA
+      </a>
+
+      <a href="index.html" class="back">
+        ← Back to Portfolio
+      </a>
     </div>
+  </header>
 
+  <main class="container">
+
+    <section class="intro">
+
+      <div class="eyebrow">
+        Portfolio / 3D Modeling
+      </div>
+
+      <h1>Blender 3D Models</h1>
+
+      <div class="tools">
+        Blender · 3D Modeling · Texturing
+      </div>
+
+      <div class="description">
+
+        <p>
+          I've been learning how to create 3D models
+          in Blender, mainly focusing on furniture
+          and objects for game environments.
+        </p>
+
+        <p>
+          I usually work with references while
+          learning to build models, adjust their
+          shapes and proportions, and create
+          movable parts such as drawers and doors.
+          I also experiment with materials and
+          textures, including creating and editing
+          textures in Krita.
+        </p>
+
+        <p>
+          I'm learning how to prepare models for
+          use in game engines such as Unity.
+          Although my main interest is developing
+          my own games, I enjoy 3D modeling and
+          would like to continue improving my skills.
+        </p>
+
+      </div>
+
+    </section>
+
+    <section class="gallery-section">
+
+      <div class="section-heading">
+        <h2>3D Models</h2>
+      </div>
+
+      <div class="gallery">
+
+        <article class="gallery-item">
+          <div class="image-box">
+            <img
+              class="main-image"
+              src="images/writing-desk.jpg"
+              alt="Writing desk 3D model"
+              loading="lazy"
+            >
+            <div class="placeholder">
+              WRITING DESK
+            </div>
+          </div>
+
+          <h3>Writing Desk</h3>
+          <p>Blender · Furniture Modeling</p>
+        </article>
+
+        <article class="gallery-item">
+          <div class="image-box has-hover">
+
+            <img
+              class="main-image"
+              src="screen books (1).jpg"
+              alt="Bookshelf 3D model"
+              loading="lazy"
+            >
+
+            <img
+              class="hover-image"
+              src="screen bookshfull(1).jpg"
+              alt="Bookshelf in Blender with Transform panel"
+              loading="lazy"
+            >
+
+            <div class="placeholder">
+              BOOKSHELF
+            </div>
+
+          </div>
+
+          <h3>Bookshelf</h3>
+          <p>Blender · Environment Prop</p>
+        </article>
+
+        <article class="gallery-item">
+          <div class="image-box">
+            <img
+              class="main-image"
+              src="images/toy-blocks.jpg"
+              alt="Toy blocks 3D model"
+              loading="lazy"
+            >
+            <div class="placeholder">
+              TOY BLOCKS
+            </div>
+          </div>
+
+          <h3>Toy Blocks</h3>
+          <p>Blender · Simple Props</p>
+        </article>
+
+        <article class="gallery-item">
+          <div class="image-box">
+            <img
+              class="main-image"
+              src="images/simple-table.jpg"
+              alt="Wooden table 3D model"
+              loading="lazy"
+            >
+            <div class="placeholder">
+              WOODEN TABLE
+            </div>
+          </div>
+
+          <h3>Wooden Table</h3>
+          <p>Blender · Furniture Modeling</p>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Marianna Petrova</span>
+      <a href="index.html">Back to Portfolio ↑</a>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <button
+      class="close-lightbox"
+      id="closeLightbox"
+      aria-label="Close image"
+    >
+      ×
+    </button>
+
+    <img
+      id="lightboxImage"
+      alt="Enlarged 3D model"
+    >
   </div>
 
-  <h3>Bookshelf</h3>
-  <p>Blender · Environment Prop</p>
-</article>
+  <script>
+    const lightbox =
+      document.getElementById("lightbox");
+
+    const lightboxImage =
+      document.getElementById("lightboxImage");
+
+    const closeButton =
+      document.getElementById("closeLightbox");
+
+    document.querySelectorAll(".image-box").forEach(box => {
+      const mainImage = box.querySelector(".main-image");
+      const hoverImage = box.querySelector(".hover-image");
+      const placeholder = box.querySelector(".placeholder");
+
+      mainImage.addEventListener("error", () => {
+        mainImage.style.display = "none";
+
+        if (hoverImage) {
+          hoverImage.style.display = "none";
+        }
+
+        placeholder.style.display = "flex";
+        box.style.cursor = "default";
+      });
+
+      if (hoverImage) {
+        hoverImage.addEventListener("error", () => {
+          hoverImage.style.display = "none";
+          box.classList.remove("has-hover");
+        });
+      }
+
+      box.addEventListener("click", () => {
+        if (!mainImage.complete || mainImage.naturalWidth === 0) {
+          return;
+        }
+
+        const showingHover =
+          hoverImage &&
+          box.classList.contains("has-hover") &&
+          window.matchMedia("(hover: hover)").matches &&
+          box.matches(":hover") &&
+          hoverImage.complete &&
+          hoverImage.naturalWidth > 0;
+
+        const selectedImage =
+          showingHover ? hoverImage : mainImage;
+
+        lightboxImage.src = selectedImage.src;
+        lightboxImage.alt = selectedImage.alt;
+        lightbox.classList.add("open");
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightboxImage.removeAttribute("src");
+    }
+
+    closeButton.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", event => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closeLightbox();
+      }
+    });
+  </script>
+
+</body>
+</html>
