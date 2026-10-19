@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D Modeling | Marianna Petrova</title>
+  <title>Blender 3D Models | Marianna Petrova</title>
 
   <style>
     :root {
@@ -13,7 +13,7 @@
       --text: #eeeeee;
       --muted: #aaa8ad;
       --border: #343438;
-      --accent: #c9b9aa;
+      --accent: #c8cbd0;
     }
 
     * {
@@ -60,7 +60,6 @@
     .back {
       color: var(--muted);
       font-size: 14px;
-      transition: color 0.2s;
     }
 
     .back:hover {
@@ -91,13 +90,13 @@
       color: var(--accent);
       font-size: 14px;
       letter-spacing: 1px;
-      margin-bottom: 35px;
+      margin-bottom: 30px;
     }
 
     .description {
       color: #c7c5c8;
       font-size: 16px;
-      max-width: 720px;
+      max-width: 760px;
     }
 
     .description p {
@@ -109,9 +108,6 @@
     }
 
     .section-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
       border-bottom: 1px solid var(--border);
       padding-bottom: 18px;
       margin-bottom: 25px;
@@ -124,62 +120,70 @@
       margin: 0;
     }
 
-    .count {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
     .gallery {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 36px 28px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
     }
 
-    .model {
+    .gallery-item {
       min-width: 0;
     }
 
     .image-box {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
       background: var(--surface);
       border: 1px solid var(--border);
-      aspect-ratio: 4 / 3;
       overflow: hidden;
       cursor: zoom-in;
-      position: relative;
     }
 
     .image-box img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: contain;
       display: block;
-      transition: transform 0.35s ease;
+      transition: opacity 0.35s ease;
     }
 
-    .image-box:hover img {
-      transform: scale(1.04);
+    .image-box .hover-image {
+      opacity: 0;
+    }
+
+    @media (hover: hover) {
+      .image-box.has-hover:hover .main-image {
+        opacity: 0;
+      }
+
+      .image-box.has-hover:hover .hover-image {
+        opacity: 1;
+      }
     }
 
     .placeholder {
       display: none;
-      width: 100%;
-      height: 100%;
+      position: absolute;
+      inset: 0;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      padding: 20px;
       color: #777;
+      text-align: center;
       font-size: 13px;
       letter-spacing: 1px;
+      padding: 20px;
     }
 
-    .model h3 {
+    .gallery-item h3 {
       font-size: 16px;
       font-weight: normal;
-      margin: 14px 0 3px;
+      margin: 12px 0 4px;
     }
 
-    .model p {
+    .gallery-item p {
       color: var(--muted);
       font-size: 13px;
       margin: 0;
@@ -197,8 +201,6 @@
       justify-content: space-between;
       gap: 20px;
     }
-
-    /* Enlarged image viewer */
 
     .lightbox {
       display: none;
@@ -232,7 +234,7 @@
       cursor: pointer;
     }
 
-    @media (max-width: 550px) {
+    @media (max-width: 700px) {
       .container {
         padding: 0 20px;
       }
@@ -247,10 +249,6 @@
 
       .footer-inner {
         flex-direction: column;
-      }
-
-      .section-heading {
-        gap: 12px;
       }
     }
   </style>
@@ -275,39 +273,39 @@
     <section class="intro">
 
       <div class="eyebrow">
-        Portfolio / Game Assets
+        Portfolio / 3D Modeling
       </div>
 
-      <h1>3D Modeling</h1>
+      <h1>Blender 3D Models</h1>
 
       <div class="tools">
-        Blender · Krita · Unity
+        Blender · 3D Modeling · Texturing
       </div>
 
       <div class="description">
-
         <p>
-          I have basic experience with Blender,
-          creating 3D furniture and environment
-          props for game projects.
+          I've been learning how to create 3D models
+          in Blender, mainly focusing on furniture
+          and objects for game environments.
         </p>
 
         <p>
-          Most of my models are created from scratch
-          using visual references. I can create
-          movable elements, such as drawers and doors,
-          work with materials and textures, and import
-          3D models into Unity. I also use Krita to
-          create and edit textures.
+          I usually work with references while
+          learning to build models, adjust their
+          shapes and proportions, and create
+          movable parts such as drawers and doors.
+          I also experiment with materials and
+          textures, including creating and editing
+          textures in Krita.
         </p>
 
         <p>
-          I enjoy working in Blender and would love
-          to explore 3D modeling further in the future.
-          At the moment, my main focus is on developing
-          my own games and personal projects.
+          I'm learning how to prepare models for
+          use in game engines such as Unity.
+          Although my main interest is developing
+          my own games, I enjoy 3D modeling and
+          would like to continue improving my skills.
         </p>
-
       </div>
 
     </section>
@@ -315,86 +313,86 @@
     <section class="gallery-section">
 
       <div class="section-heading">
-        <h2>My 3D Models</h2>
-        <span class="count">Selected Works</span>
+        <h2>3D Models</h2>
       </div>
 
       <div class="gallery">
 
-        <!-- WRITING DESK -->
-
-        <article class="model">
+        <article class="gallery-item">
           <div class="image-box">
             <img
+              class="main-image"
               src="images/writing-desk.jpg"
-              alt="3D writing desk"
+              alt="Writing desk 3D model"
               loading="lazy"
             >
             <div class="placeholder">
               WRITING DESK
             </div>
           </div>
-
           <h3>Writing Desk</h3>
-          <p>Blender · Furniture</p>
+          <p>Blender · Furniture Modeling</p>
         </article>
 
-        <!-- BOOKSHELF -->
+        <article class="gallery-item">
+          <div class="image-box has-hover">
 
-        <article class="model">
-          <div class="image-box">
             <img
-              src="images/bookshelf.jpg"
-              alt="3D bookshelf with books"
+              class="main-image"
+              src="images/screen booksh.jpg"
+              alt="Bookshelf 3D model"
               loading="lazy"
             >
+
+            <img
+              class="hover-image"
+              src="images/screen bookshfull.jpg"
+              alt="Bookshelf in Blender with Transform panel"
+              loading="lazy"
+            >
+
             <div class="placeholder">
               BOOKSHELF
             </div>
-          </div>
 
+          </div>
           <h3>Bookshelf</h3>
           <p>Blender · Environment Prop</p>
         </article>
 
-        <!-- TOY BLOCKS -->
-
-        <article class="model">
+        <article class="gallery-item">
           <div class="image-box">
             <img
+              class="main-image"
               src="images/toy-blocks.jpg"
-              alt="3D wooden toy blocks"
+              alt="Toy blocks 3D model"
               loading="lazy"
             >
             <div class="placeholder">
               TOY BLOCKS
             </div>
           </div>
-
           <h3>Toy Blocks</h3>
-          <p>Blender · Game Prop</p>
+          <p>Blender · Simple Props</p>
         </article>
 
-        <!-- SIMPLE TABLE -->
-
-        <article class="model">
+        <article class="gallery-item">
           <div class="image-box">
             <img
+              class="main-image"
               src="images/simple-table.jpg"
-              alt="3D wooden table"
+              alt="Wooden table 3D model"
               loading="lazy"
             >
             <div class="placeholder">
-              SIMPLE TABLE
+              WOODEN TABLE
             </div>
           </div>
-
           <h3>Wooden Table</h3>
-          <p>Blender · Furniture</p>
+          <p>Blender · Furniture Modeling</p>
         </article>
 
       </div>
-
     </section>
 
   </main>
@@ -406,8 +404,6 @@
     </div>
   </footer>
 
-  <!-- Enlarged image viewer -->
-
   <div class="lightbox" id="lightbox">
     <button
       class="close-lightbox"
@@ -417,11 +413,16 @@
       ×
     </button>
 
-    <img id="lightboxImage" alt="Enlarged 3D model">
+    <img
+      id="lightboxImage"
+      alt="Enlarged 3D model"
+    >
   </div>
 
   <script>
-    const lightbox = document.getElementById("lightbox");
+    const lightbox =
+      document.getElementById("lightbox");
+
     const lightboxImage =
       document.getElementById("lightboxImage");
 
@@ -429,22 +430,46 @@
       document.getElementById("closeLightbox");
 
     document.querySelectorAll(".image-box").forEach(box => {
-      const img = box.querySelector("img");
+      const mainImage = box.querySelector(".main-image");
+      const hoverImage = box.querySelector(".hover-image");
       const placeholder = box.querySelector(".placeholder");
 
-      img.addEventListener("error", () => {
-        img.style.display = "none";
+      mainImage.addEventListener("error", () => {
+        mainImage.style.display = "none";
+
+        if (hoverImage) {
+          hoverImage.style.display = "none";
+        }
+
         placeholder.style.display = "flex";
         box.style.cursor = "default";
       });
 
-      img.addEventListener("click", () => {
-        if (!img.complete || img.naturalWidth === 0) {
+      if (hoverImage) {
+        hoverImage.addEventListener("error", () => {
+          hoverImage.style.display = "none";
+          box.classList.remove("has-hover");
+        });
+      }
+
+      box.addEventListener("click", () => {
+        if (!mainImage.complete || mainImage.naturalWidth === 0) {
           return;
         }
 
-        lightboxImage.src = img.src;
-        lightboxImage.alt = img.alt;
+        const showingHover =
+          hoverImage &&
+          box.classList.contains("has-hover") &&
+          window.matchMedia("(hover: hover)").matches &&
+          box.matches(":hover") &&
+          hoverImage.complete &&
+          hoverImage.naturalWidth > 0;
+
+        const selectedImage =
+          showingHover ? hoverImage : mainImage;
+
+        lightboxImage.src = selectedImage.src;
+        lightboxImage.alt = selectedImage.alt;
         lightbox.classList.add("open");
       });
     });
