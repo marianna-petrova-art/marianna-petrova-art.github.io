@@ -1,0 +1,515 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Modeling | Marianna Petrova</title>
+
+  <style>
+    :root {
+      --bg: #111113;
+      --surface: #1b1b1e;
+      --text: #eeeeee;
+      --muted: #aaa8ad;
+      --border: #343438;
+      --accent: #c9b9aa;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 28px;
+    }
+
+    header {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .back {
+      color: var(--muted);
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .back:hover {
+      color: white;
+    }
+
+    .intro {
+      padding: 90px 0 65px;
+      max-width: 800px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(42px, 7vw, 76px);
+      font-weight: normal;
+      line-height: 1.1;
+      margin: 18px 0 25px;
+    }
+
+    .tools {
+      color: var(--accent);
+      font-size: 14px;
+      letter-spacing: 1px;
+      margin-bottom: 35px;
+    }
+
+    .description {
+      color: #c7c5c8;
+      font-size: 16px;
+      max-width: 720px;
+    }
+
+    .description p {
+      margin-bottom: 20px;
+    }
+
+    .gallery-section {
+      padding: 30px 0 100px;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 18px;
+      margin-bottom: 35px;
+    }
+
+    h2 {
+      font-family: Georgia, serif;
+      font-size: 32px;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .count {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .model {
+      min-width: 0;
+    }
+
+    .image-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      cursor: zoom-in;
+      position: relative;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .image-box:hover img {
+      transform: scale(1.04);
+    }
+
+    .placeholder {
+      display: none;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      color: #777;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .model h3 {
+      font-size: 16px;
+      font-weight: normal;
+      margin: 14px 0 3px;
+    }
+
+    .model p {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 0;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* Enlarged image viewer */
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.94);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 65px 25px;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 95%;
+      max-height: 90%;
+      object-fit: contain;
+    }
+
+    .close-lightbox {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 35px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 850px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 550px) {
+      .container {
+        padding: 0 20px;
+      }
+
+      .intro {
+        padding: 65px 0 45px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+
+      .section-heading {
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        MARIANNA PETROVA
+      </a>
+
+      <a href="index.html" class="back">
+        ← Back to Portfolio
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="intro">
+
+      <div class="eyebrow">
+        Portfolio / Game Assets
+      </div>
+
+      <h1>3D Modeling</h1>
+
+      <div class="tools">
+        Blender · Krita · Unity
+      </div>
+
+      <div class="description">
+
+        <p>
+          I have basic experience with Blender,
+          creating 3D furniture and environment
+          props for game projects.
+        </p>
+
+        <p>
+          Most of my models are created from scratch
+          using visual references. I can create
+          movable elements, such as drawers and doors,
+          work with materials and textures, and import
+          3D models into Unity. I also use Krita to
+          create and edit textures.
+        </p>
+
+        <p>
+          I enjoy working in Blender and would love
+          to explore 3D modeling further in the future.
+          At the moment, my main focus is on developing
+          my own games and personal projects.
+        </p>
+
+      </div>
+
+    </section>
+
+    <section class="gallery-section">
+
+      <div class="section-heading">
+        <h2>My 3D Models</h2>
+        <span class="count">Selected Works</span>
+      </div>
+
+      <div class="gallery">
+
+        <!-- MODEL 1 -->
+
+        <article class="model">
+          <div class="image-box">
+            <img
+              src="images/writing-desk.jpg"
+              alt="3D writing desk"
+              loading="lazy"
+            >
+            <div class="placeholder">
+              WRITING DESK
+            </div>
+          </div>
+
+          <h3>Writing Desk</h3>
+          <p>Blender · Furniture</p>
+        </article>
+
+        <!-- MODEL 2 -->
+
+        <article class="model">
+          <div class="image-box">
+            <img
+              src="images/armchair.jpg"
+              alt="3D armchair"
+              loading="lazy"
+            >
+            <div class="placeholder">
+              ARMCHAIR
+            </div>
+          </div>
+
+          <h3>Armchair</h3>
+          <p>Blender · Furniture</p>
+        </article>
+
+        <!-- MODEL 3 -->
+
+        <article class="model">
+          <div class="image-box">
+            <img
+              src="images/kitchen-table.jpg"
+              alt="3D kitchen table"
+              loading="lazy"
+            >
+            <div class="placeholder">
+              KITCHEN TABLE
+            </div>
+          </div>
+
+          <h3>Kitchen Table</h3>
+          <p>Blender · Furniture</p>
+        </article>
+
+        <!-- MODEL 4 -->
+
+        <article class="model">
+          <div class="image-box">
+            <img
+              src="images/wooden-chair.jpg"
+              alt="3D wooden chair"
+              loading="lazy"
+            >
+            <div class="placeholder">
+              WOODEN CHAIR
+            </div>
+          </div>
+
+          <h3>Wooden Chair</h3>
+          <p>Blender · Furniture</p>
+        </article>
+
+        <!-- MODEL 5 -->
+
+        <article class="model">
+          <div class="image-box">
+            <img
+              src="images/model-5.jpg"
+              alt="3D model"
+              loading="lazy"
+            >
+            <div class="placeholder">
+              MODEL 05
+            </div>
+          </div>
+
+          <h3>3D Model 05</h3>
+          <p>Blender · Game Asset</p>
+        </article>
+
+        <!-- MODEL 6 -->
+
+        <article class="model">
+          <div class="image-box">
+            <img
+              src="images/model-6.jpg"
+              alt="3D model"
+              loading="lazy"
+            >
+            <div class="placeholder">
+              MODEL 06
+            </div>
+          </div>
+
+          <h3>3D Model 06</h3>
+          <p>Blender · Game Asset</p>
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Marianna Petrova</span>
+      <a href="index.html">Back to Portfolio ↑</a>
+    </div>
+  </footer>
+
+  <!-- Enlarged image viewer -->
+
+  <div class="lightbox" id="lightbox">
+    <button
+      class="close-lightbox"
+      id="closeLightbox"
+      aria-label="Close image"
+    >
+      ×
+    </button>
+
+    <img id="lightboxImage" alt="Enlarged 3D model">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage =
+      document.getElementById("lightboxImage");
+
+    const closeButton =
+      document.getElementById("closeLightbox");
+
+    document.querySelectorAll(".image-box").forEach(box => {
+      const img = box.querySelector("img");
+      const placeholder = box.querySelector(".placeholder");
+
+      img.addEventListener("error", () => {
+        img.style.display = "none";
+        placeholder.style.display = "flex";
+        box.style.cursor = "default";
+      });
+
+      img.addEventListener("click", () => {
+        if (!img.complete || img.naturalWidth === 0) {
+          return;
+        }
+
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt;
+        lightbox.classList.add("open");
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightboxImage.removeAttribute("src");
+    }
+
+    closeButton.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", event => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closeLightbox();
+      }
+    });
+  </script>
+
+</body>
+</html>
