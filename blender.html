@@ -131,8 +131,8 @@
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 36px 28px;
     }
 
     .model {
@@ -232,12 +232,6 @@
       cursor: pointer;
     }
 
-    @media (max-width: 850px) {
-      .gallery {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
     @media (max-width: 550px) {
       .container {
         padding: 0 20px;
@@ -327,7 +321,7 @@
 
       <div class="gallery">
 
-        <!-- MODEL 1 -->
+        <!-- WRITING DESK -->
 
         <article class="model">
           <div class="image-box">
@@ -345,94 +339,58 @@
           <p>Blender · Furniture</p>
         </article>
 
-        <!-- MODEL 2 -->
+        <!-- BOOKSHELF -->
 
         <article class="model">
           <div class="image-box">
             <img
-              src="images/armchair.jpg"
-              alt="3D armchair"
+              src="images/bookshelf.jpg"
+              alt="3D bookshelf with books"
               loading="lazy"
             >
             <div class="placeholder">
-              ARMCHAIR
+              BOOKSHELF
             </div>
           </div>
 
-          <h3>Armchair</h3>
+          <h3>Bookshelf</h3>
+          <p>Blender · Environment Prop</p>
+        </article>
+
+        <!-- TOY BLOCKS -->
+
+        <article class="model">
+          <div class="image-box">
+            <img
+              src="images/toy-blocks.jpg"
+              alt="3D wooden toy blocks"
+              loading="lazy"
+            >
+            <div class="placeholder">
+              TOY BLOCKS
+            </div>
+          </div>
+
+          <h3>Toy Blocks</h3>
+          <p>Blender · Game Prop</p>
+        </article>
+
+        <!-- SIMPLE TABLE -->
+
+        <article class="model">
+          <div class="image-box">
+            <img
+              src="images/simple-table.jpg"
+              alt="3D wooden table"
+              loading="lazy"
+            >
+            <div class="placeholder">
+              SIMPLE TABLE
+            </div>
+          </div>
+
+          <h3>Wooden Table</h3>
           <p>Blender · Furniture</p>
-        </article>
-
-        <!-- MODEL 3 -->
-
-        <article class="model">
-          <div class="image-box">
-            <img
-              src="images/kitchen-table.jpg"
-              alt="3D kitchen table"
-              loading="lazy"
-            >
-            <div class="placeholder">
-              KITCHEN TABLE
-            </div>
-          </div>
-
-          <h3>Kitchen Table</h3>
-          <p>Blender · Furniture</p>
-        </article>
-
-        <!-- MODEL 4 -->
-
-        <article class="model">
-          <div class="image-box">
-            <img
-              src="images/wooden-chair.jpg"
-              alt="3D wooden chair"
-              loading="lazy"
-            >
-            <div class="placeholder">
-              WOODEN CHAIR
-            </div>
-          </div>
-
-          <h3>Wooden Chair</h3>
-          <p>Blender · Furniture</p>
-        </article>
-
-        <!-- MODEL 5 -->
-
-        <article class="model">
-          <div class="image-box">
-            <img
-              src="images/model-5.jpg"
-              alt="3D model"
-              loading="lazy"
-            >
-            <div class="placeholder">
-              MODEL 05
-            </div>
-          </div>
-
-          <h3>3D Model 05</h3>
-          <p>Blender · Game Asset</p>
-        </article>
-
-        <!-- MODEL 6 -->
-
-        <article class="model">
-          <div class="image-box">
-            <img
-              src="images/model-6.jpg"
-              alt="3D model"
-              loading="lazy"
-            >
-            <div class="placeholder">
-              MODEL 06
-            </div>
-          </div>
-
-          <h3>3D Model 06</h3>
-          <p>Blender · Game Asset</p>
         </article>
 
       </div>
