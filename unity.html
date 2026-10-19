@@ -104,15 +104,11 @@
       margin: 0 0 14px;
     }
 
-    section.content-section {
+    .content-section {
       padding: 25px 0 35px;
     }
 
     .section-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 20px;
       border-bottom: 1px solid var(--border);
       padding-bottom: 18px;
       margin-bottom: 25px;
@@ -123,11 +119,6 @@
       font-size: 32px;
       font-weight: normal;
       margin: 0;
-    }
-
-    .section-note {
-      color: var(--muted);
-      font-size: 13px;
     }
 
     .skills {
@@ -245,7 +236,7 @@
       padding: 30px;
     }
 
-    .video-placeholder .play-icon {
+    .play-icon {
       font-size: 40px;
       color: var(--accent);
       margin-bottom: 10px;
@@ -275,8 +266,6 @@
       justify-content: space-between;
       gap: 20px;
     }
-
-    /* Image viewer */
 
     .lightbox {
       display: none;
@@ -324,12 +313,6 @@
         padding: 50px 0 10px;
       }
 
-      .section-heading {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 5px;
-      }
-
       .footer-inner {
         flex-direction: column;
       }
@@ -353,8 +336,6 @@
 
   <main class="container">
 
-    <!-- INTRODUCTION -->
-
     <section class="intro">
 
       <div class="eyebrow">
@@ -368,7 +349,6 @@
       </div>
 
       <div class="description">
-
         <p>
           This is a small learning project I created
           to explore 3D game development in Unity.
@@ -382,20 +362,14 @@
           Unity editor, C# scripts, and different
           gameplay mechanics.
         </p>
-
       </div>
 
     </section>
-
-    <!-- WHAT I WORKED ON -->
 
     <section class="content-section">
 
       <div class="section-heading">
         <h2>What I Worked On</h2>
-        <span class="section-note">
-          Gameplay & Environment
-        </span>
       </div>
 
       <div class="skills">
@@ -472,8 +446,6 @@
 
     </section>
 
-    <!-- LEARNING EXPERIENCE -->
-
     <section class="content-section">
 
       <div class="section-heading">
@@ -481,7 +453,6 @@
       </div>
 
       <div class="learning">
-
         <p>
           I used ChatGPT to help me understand
           Unity and C# scripts throughout the
@@ -496,20 +467,14 @@
           I'm continuing to learn C# and enjoy
           experimenting with new gameplay mechanics.
         </p>
-
       </div>
 
     </section>
-
-    <!-- SCREENSHOTS -->
 
     <section class="content-section">
 
       <div class="section-heading">
         <h2>Project Screenshots</h2>
-        <span class="section-note">
-          Unity Editor & Gameplay
-        </span>
       </div>
 
       <div class="gallery">
@@ -578,24 +543,17 @@
 
     </section>
 
-    <!-- VIDEO -->
-
     <section class="content-section">
 
       <div class="section-heading">
         <h2>Gameplay Demonstration</h2>
-        <span class="section-note">
-          Short Video
-        </span>
       </div>
 
       <div class="video-box" id="videoBox">
-
         <div class="video-placeholder" id="videoPlaceholder">
           <div class="play-icon">▷</div>
           <p>Gameplay video coming soon</p>
         </div>
-
       </div>
 
       <p class="video-description">
@@ -614,10 +572,7 @@
     </div>
   </footer>
 
-  <!-- IMAGE LIGHTBOX -->
-
   <div class="lightbox" id="lightbox">
-
     <button
       class="close-lightbox"
       id="closeLightbox"
@@ -630,7 +585,6 @@
       id="lightboxImage"
       alt="Enlarged Unity screenshot"
     >
-
   </div>
 
   <script>
@@ -643,12 +597,9 @@
     const closeButton =
       document.getElementById("closeLightbox");
 
-    // Screenshots
-
     document.querySelectorAll(".image-box").forEach(box => {
       const img = box.querySelector("img");
-      const placeholder =
-        box.querySelector(".placeholder");
+      const placeholder = box.querySelector(".placeholder");
 
       img.addEventListener("error", () => {
         img.style.display = "none";
@@ -686,8 +637,7 @@
       }
     });
 
-    // Optional gameplay video.
-    // Put unity-gameplay.mp4 in the videos folder.
+    // Optional gameplay video
 
     const videoPath = "videos/unity-gameplay.mp4";
     const videoBox = document.getElementById("videoBox");
