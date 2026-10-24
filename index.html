@@ -165,7 +165,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 1;
+      z-index: 2;
       opacity: 0;
       transition: opacity 0.35s ease;
     }
@@ -189,6 +189,37 @@
     .kupala-link:hover .kupala-overlay,
     .kupala-link:focus-visible .kupala-overlay {
       opacity: 1;
+    }
+
+    /* 3D ART: BLACK & WHITE TO COLOR */
+
+    .art3d-link .art3d-bw,
+    .art3d-link .art3d-color {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .art3d-link .art3d-bw {
+      opacity: 1;
+    }
+
+    .art3d-link .art3d-color {
+      opacity: 0;
+    }
+
+    .art3d-link:hover .art3d-bw,
+    .art3d-link:focus-visible .art3d-bw {
+      opacity: 0;
+    }
+
+    .art3d-link:hover .art3d-color,
+    .art3d-link:focus-visible .art3d-color {
+      opacity: 1;
+      filter: brightness(1.1);
     }
 
     /* ABOUT */
@@ -299,7 +330,9 @@
     @media (prefers-reduced-motion: reduce) {
       .kupala-link img,
       .kupala-link::after,
-      .kupala-overlay {
+      .kupala-overlay,
+      .art3d-link .art3d-bw,
+      .art3d-link .art3d-color {
         transition: none;
       }
     }
@@ -372,12 +405,18 @@
         <!-- 3D ART -->
 
         <div class="project">
-          <a class="project-image kupala-link"
+          <a class="project-image kupala-link art3d-link"
              href="3d.html"
              aria-label="View 3D Art">
 
-            <img src="images/3d-artwork-cover.jpg"
-                 alt="3D artwork featuring wooden furniture, bookshelves and alphabet blocks">
+            <img class="art3d-bw"
+                 src="images/3d-art-cover-bw.jpg"
+                 alt="3D models in black and white">
+
+            <img class="art3d-color"
+                 src="images/3d-art-cover-color.jpg"
+                 alt=""
+                 aria-hidden="true">
 
             <div class="kupala-overlay">
               <span>READ MORE →</span>
