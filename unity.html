@@ -46,20 +46,14 @@
 
     .header-inner {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: center;
-      gap: 20px;
-    }
-
-    .logo {
-      font-size: 16px;
-      font-weight: bold;
-      letter-spacing: 1px;
     }
 
     .back {
-      color: var(--muted);
-      font-size: 14px;
+      color: #ccc;
+      font-size: 12px;
+      letter-spacing: 2px;
       transition: color 0.2s;
     }
 
@@ -292,15 +286,9 @@
 
   <header>
     <div class="container header-inner">
-
-      <a href="index.html" class="logo">
-        MARIANNA PETROVA
-      </a>
-
       <a href="index.html" class="back">
-        ← Back to Portfolio
+        ← BACK TO PORTFOLIO
       </a>
-
     </div>
   </header>
 
@@ -321,7 +309,6 @@
       </div>
 
       <div class="description">
-
         <p>
           This is a small learning project I developed
           over approximately one month to explore
@@ -336,7 +323,6 @@
           Unity editor, C# scripts, and different
           gameplay mechanics.
         </p>
-
       </div>
     </section>
 
@@ -354,7 +340,7 @@
 
         <div class="image-box">
           <img
-            src="images/unity-exterior.jpg"
+            src="unity-exterior.jpg"
             alt="Nighttime exterior environment"
             loading="lazy">
           <div class="placeholder">SCREENSHOT 1</div>
@@ -364,7 +350,7 @@
 
         <div class="image-box">
           <img
-            src="images/unity-environment.jpg"
+            src="unity-environment.jpg"
             alt="Interior game environment"
             loading="lazy">
           <div class="placeholder">SCREENSHOT 2</div>
@@ -374,7 +360,7 @@
 
         <div class="image-box">
           <img
-            src="images/unity-fridge.jpg"
+            src="unity-fridge.jpg"
             alt="Interactive refrigerator"
             loading="lazy">
           <div class="placeholder">SCREENSHOT 3</div>
@@ -384,7 +370,7 @@
 
         <div class="image-box">
           <img
-            src="images/unity-crafting.jpg"
+            src="unity-crafting.jpg"
             alt="Sandwich crafting interaction"
             loading="lazy">
           <div class="placeholder">SCREENSHOT 4</div>
@@ -394,7 +380,7 @@
 
         <div class="image-box">
           <img
-            src="images/unity-pickup-drop.jpg"
+            src="unity-pickup-drop.jpg"
             alt="Object pickup and drop interaction"
             loading="lazy">
           <div class="placeholder">SCREENSHOT 5</div>
@@ -404,7 +390,7 @@
 
         <div class="image-box">
           <img
-            src="images/unity-washing-hands.jpg"
+            src="unity-washing-hands.jpg"
             alt="Washing hands progress bar"
             loading="lazy">
           <div class="placeholder">SCREENSHOT 6</div>
@@ -437,31 +423,24 @@
           <li>
             Building the environment and adjusting lighting
           </li>
-
           <li>
             First-person movement and camera controls
           </li>
-
           <li>
             Picking up, carrying, and dropping objects
           </li>
-
           <li>
             Opening doors, drawers, windows, and the refrigerator
           </li>
-
           <li>
             Combining ingredients to prepare a sandwich
           </li>
-
           <li>
             Adding timed interactions, such as washing hands and eating
           </li>
-
           <li>
             Creating interaction prompts, progress bars, and character thoughts
           </li>
-
           <li>
             Using conditions to control when certain actions are available
           </li>
