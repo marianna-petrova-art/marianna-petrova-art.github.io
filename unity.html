@@ -121,42 +121,6 @@
       margin: 0;
     }
 
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .skill {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 25px;
-    }
-
-    .skill h3 {
-      font-size: 17px;
-      font-weight: normal;
-      color: var(--accent);
-      margin: 0 0 12px;
-    }
-
-    .skill p {
-      font-size: 14px;
-      line-height: 1.8;
-      color: #c7c5c8;
-      margin: 0;
-    }
-
-    .learning {
-      max-width: 780px;
-      color: #c7c5c8;
-      font-size: 16px;
-    }
-
-    .learning p {
-      margin: 0 0 15px;
-    }
-
     /* SCREENSHOT GALLERY */
 
     .gallery {
@@ -200,6 +164,46 @@
       font-size: 13px;
       letter-spacing: 1px;
       padding: 20px;
+    }
+
+    /* SKILLS */
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .skill {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 25px;
+    }
+
+    .skill h3 {
+      font-size: 17px;
+      font-weight: normal;
+      color: var(--accent);
+      margin: 0 0 12px;
+    }
+
+    .skill p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #c7c5c8;
+      margin: 0;
+    }
+
+    /* LEARNING EXPERIENCE */
+
+    .learning {
+      max-width: 780px;
+      color: #c7c5c8;
+      font-size: 16px;
+    }
+
+    .learning p {
+      margin: 0 0 15px;
     }
 
     /* LIGHTBOX */
@@ -333,6 +337,80 @@
       </div>
     </section>
 
+    <!-- PROJECT SCREENSHOTS -->
+
+    <section class="content-section">
+
+      <div class="section-heading">
+        <h2>Project Screenshots</h2>
+      </div>
+
+      <div class="gallery">
+
+        <!-- SCREENSHOT 1: EXTERIOR -->
+
+        <div class="image-box">
+          <img
+            src="images/unity-exterior.jpg"
+            alt="Nighttime exterior environment"
+            loading="lazy">
+          <div class="placeholder">SCREENSHOT 1</div>
+        </div>
+
+        <!-- SCREENSHOT 2: ENVIRONMENT -->
+
+        <div class="image-box">
+          <img
+            src="images/unity-environment.jpg"
+            alt="Interior game environment"
+            loading="lazy">
+          <div class="placeholder">SCREENSHOT 2</div>
+        </div>
+
+        <!-- SCREENSHOT 3: FRIDGE -->
+
+        <div class="image-box">
+          <img
+            src="images/unity-fridge.jpg"
+            alt="Interactive refrigerator"
+            loading="lazy">
+          <div class="placeholder">SCREENSHOT 3</div>
+        </div>
+
+        <!-- SCREENSHOT 4: CRAFTING -->
+
+        <div class="image-box">
+          <img
+            src="images/unity-crafting.jpg"
+            alt="Sandwich crafting interaction"
+            loading="lazy">
+          <div class="placeholder">SCREENSHOT 4</div>
+        </div>
+
+        <!-- SCREENSHOT 5: PICKUP AND DROP -->
+
+        <div class="image-box">
+          <img
+            src="images/unity-pickup-drop.jpg"
+            alt="Object pickup and drop interaction"
+            loading="lazy">
+          <div class="placeholder">SCREENSHOT 5</div>
+        </div>
+
+        <!-- SCREENSHOT 6: WASHING HANDS -->
+
+        <div class="image-box">
+          <img
+            src="images/unity-washing-hands.jpg"
+            alt="Washing hands progress bar"
+            loading="lazy">
+          <div class="placeholder">SCREENSHOT 6</div>
+        </div>
+
+      </div>
+
+    </section>
+
     <!-- WHAT I WORKED ON -->
 
     <section class="content-section">
@@ -414,7 +492,7 @@
       </div>
     </section>
 
-    <!-- LEARNING EXPERIENCE -->
+    <!-- MY LEARNING EXPERIENCE -->
 
     <section class="content-section">
 
@@ -440,80 +518,6 @@
         </p>
 
       </div>
-    </section>
-
-    <!-- SIX SCREENSHOTS -->
-
-    <section class="content-section">
-
-      <div class="section-heading">
-        <h2>Project Screenshots</h2>
-      </div>
-
-      <div class="gallery">
-
-        <!-- SCREENSHOT 1: EXTERIOR -->
-
-        <div class="image-box">
-          <img
-            src="images/unity-exterior.jpg"
-            alt="Nighttime exterior environment"
-            loading="lazy">
-          <div class="placeholder">SCREENSHOT 1</div>
-        </div>
-
-        <!-- SCREENSHOT 2: ENVIRONMENT -->
-
-        <div class="image-box">
-          <img
-            src="images/unity-environment.jpg"
-            alt="Interior game environment"
-            loading="lazy">
-          <div class="placeholder">SCREENSHOT 2</div>
-        </div>
-
-        <!-- SCREENSHOT 3: FRIDGE -->
-
-        <div class="image-box">
-          <img
-            src="images/unity-fridge.jpg"
-            alt="Interactive refrigerator"
-            loading="lazy">
-          <div class="placeholder">SCREENSHOT 3</div>
-        </div>
-
-        <!-- SCREENSHOT 4: CRAFTING -->
-
-        <div class="image-box">
-          <img
-            src="images/unity-crafting.jpg"
-            alt="Sandwich crafting interaction"
-            loading="lazy">
-          <div class="placeholder">SCREENSHOT 4</div>
-        </div>
-
-        <!-- SCREENSHOT 5: PICKUP AND DROP -->
-
-        <div class="image-box">
-          <img
-            src="images/unity-pickup-drop.jpg"
-            alt="Object pickup and drop interaction"
-            loading="lazy">
-          <div class="placeholder">SCREENSHOT 5</div>
-        </div>
-
-        <!-- SCREENSHOT 6: WASHING HANDS -->
-
-        <div class="image-box">
-          <img
-            src="images/unity-washing-hands.jpg"
-            alt="Washing hands progress bar"
-            loading="lazy">
-          <div class="placeholder">SCREENSHOT 6</div>
-        </div>
-
-      </div>
-
     </section>
 
   </main>
@@ -595,3 +599,4 @@
 
 </body>
 </html>
+
