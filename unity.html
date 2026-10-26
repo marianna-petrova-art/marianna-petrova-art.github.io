@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Unity 3D Project | Marianna Petrova</title>
+  <title>Unity Project | Marianna Petrova</title>
 
   <style>
     :root {
@@ -170,32 +170,30 @@
       padding: 20px;
     }
 
-    /* SKILLS */
+    /* WHAT I WORKED ON */
 
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .skill {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 25px;
-    }
-
-    .skill h3 {
-      font-size: 17px;
-      font-weight: normal;
-      color: var(--accent);
-      margin: 0 0 12px;
-    }
-
-    .skill p {
-      font-size: 14px;
-      line-height: 1.8;
+    .work-description {
+      max-width: 820px;
       color: #c7c5c8;
+      font-size: 16px;
+    }
+
+    .work-description p {
+      margin: 0 0 18px;
+    }
+
+    .work-description ul {
       margin: 0;
+      padding-left: 23px;
+    }
+
+    .work-description li {
+      padding-left: 5px;
+      margin-bottom: 9px;
+    }
+
+    .work-description li::marker {
+      color: #999;
     }
 
     /* LEARNING EXPERIENCE */
@@ -263,7 +261,6 @@
     /* MOBILE */
 
     @media (max-width: 700px) {
-      .skills,
       .gallery {
         grid-template-columns: 1fr;
       }
@@ -317,10 +314,10 @@
         Portfolio / Game Development
       </div>
 
-      <h1>Unity 3D Project</h1>
+      <h1>Unity Project</h1>
 
       <div class="tools">
-        Unity · C# · 3D Game Development
+        Unity, C#, 3D Game Development
       </div>
 
       <div class="description">
@@ -424,75 +421,51 @@
         <h2>What I Worked On</h2>
       </div>
 
-      <div class="skills">
+      <div class="work-description">
 
-        <article class="skill">
-          <h3>Environment & Lighting</h3>
-          <p>
-            I learned how to import and arrange
-            3D models, decorate rooms, adjust
-            objects and materials, and work
-            with lighting to create the
-            atmosphere I wanted.
-          </p>
-        </article>
+        <p>
+          I created a small interactive 3D environment
+          in Unity using free assets. My main focus
+          was learning how to work with the Unity
+          editor, write basic C# scripts, and
+          implement gameplay mechanics.
+        </p>
 
-        <article class="skill">
-          <h3>Player Controls</h3>
-          <p>
-            I added first-person movement and
-            camera controls, allowing the player
-            to walk around and explore the
-            environment.
-          </p>
-        </article>
+        <p>During this project, I worked on:</p>
 
-        <article class="skill">
-          <h3>Object Interactions</h3>
-          <p>
-            I made it possible to pick up, carry,
-            and drop objects, open doors, drawers,
-            and windows, and interact with
-            different items, including food
-            and kitchen objects.
-          </p>
-        </article>
+        <ul>
+          <li>
+            Building the environment and adjusting lighting
+          </li>
 
-        <article class="skill">
-          <h3>Interface & Messages</h3>
-          <p>
-            I created on-screen instructions
-            that change depending on the player's
-            actions. For example, when holding
-            an object, the interface shows
-            that pressing E will drop it.
-            I also added contextual messages
-            and character thoughts.
-          </p>
-        </article>
+          <li>
+            First-person movement and camera controls
+          </li>
 
-        <article class="skill">
-          <h3>Item Combinations & Timed Actions</h3>
-          <p>
-            I experimented with combining
-            ingredients to prepare a sandwich,
-            as well as timed interactions
-            such as washing hands and eating,
-            with progress bars.
-          </p>
-        </article>
+          <li>
+            Picking up, carrying, and dropping objects
+          </li>
 
-        <article class="skill">
-          <h3>Game Logic & C# Basics</h3>
-          <p>
-            I learned how to use conditions
-            in scripts to control when actions
-            become available. For example,
-            the player must wash their hands
-            before they can eat. I also worked
-            on preventing conflicting interactions.
-          </p>
-        </article>
+          <li>
+            Opening doors, drawers, windows, and the refrigerator
+          </li>
+
+          <li>
+            Combining ingredients to prepare a sandwich
+          </li>
+
+          <li>
+            Adding timed interactions, such as washing hands and eating
+          </li>
+
+          <li>
+            Creating interaction prompts, progress bars, and character thoughts
+          </li>
+
+          <li>
+            Using conditions to control when certain actions are available
+          </li>
+        </ul>
 
       </div>
     </section>
