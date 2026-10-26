@@ -3,26 +3,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Marianna Petrova | Portfolio</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unity 3D Project | Marianna Petrova</title>
 
   <style>
+    :root {
+      --bg: #111113;
+      --surface: #1b1b1e;
+      --text: #eeeeee;
+      --muted: #aaa8ad;
+      --border: #343438;
+      --accent: #c8cbd0;
+    }
+
     * {
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
-      background: #111111;
-      color: #eeeeee;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
     }
 
     a {
@@ -30,278 +33,248 @@
       text-decoration: none;
     }
 
-    header {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      padding: 28px 7%;
-      border-bottom: 1px solid #333;
-    }
-
-    nav {
-      display: flex;
-      gap: 25px;
-    }
-
-    nav a {
-      font-size: 12px;
-      letter-spacing: 2px;
-    }
-
-    nav a:hover {
-      color: #999;
-    }
-
-    main {
-      max-width: 1200px;
+    .container {
+      max-width: 1100px;
       margin: auto;
-      padding: 0 7%;
+      padding: 0 28px;
     }
 
-    .hero {
-      padding: 65px 0 35px;
+    header {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
     }
 
-    h1 {
-      font-family: 'PT Serif', Georgia, serif;
-      font-size: clamp(48px, 9vw, 110px);
-      line-height: 1.1;
-      letter-spacing: -2px;
-      margin: 0 0 30px;
-      font-weight: 400;
-    }
-
-    .subtitle {
-      margin: 0;
-      color: #ccc;
-      font-size: 17px;
-    }
-
-    section {
-      margin-bottom: 40px;
-    }
-
-    h2 {
-      font-size: 17px;
-      font-weight: normal;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      border-bottom: 1px solid #444;
-      padding-bottom: 14px;
-      margin: 0 0 20px;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px 35px;
-    }
-
-    .project-image {
-      background: #252525;
-      aspect-ratio: 16 / 10;
+    .header-inner {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      color: #777;
-      overflow: hidden;
-      transition: background 0.3s;
+      gap: 20px;
     }
 
-    .project-image img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .logo {
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 1px;
     }
 
-    .project:hover .project-image {
-      background: #333;
-    }
-
-    .project h3 {
-      margin: 12px 0 3px;
-      font-size: 20px;
-      font-weight: normal;
-    }
-
-    .project p {
-      margin: 0;
-      color: #888;
-      font-size: 13px;
-    }
-
-    /* HOVER EFFECT */
-
-    .kupala-link {
-      display: block;
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-    }
-
-    .kupala-link img {
-      transition: filter 0.35s ease, transform 0.35s ease;
-    }
-
-    .kupala-link::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(255, 255, 255, 0.12);
-      opacity: 0;
-      transition: opacity 0.35s ease;
-    }
-
-    .kupala-overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 2;
-      opacity: 0;
-      transition: opacity 0.35s ease;
-    }
-
-    .kupala-overlay span {
-      padding: 12px 22px;
-      background: rgba(17, 17, 17, 0.75);
-      color: #fff;
-      font-size: 13px;
-      letter-spacing: 2px;
-    }
-
-    .kupala-link:hover img,
-    .kupala-link:focus-visible img {
-      filter: brightness(1.25);
-      transform: scale(1.02);
-    }
-
-    .kupala-link:hover::after,
-    .kupala-link:focus-visible::after,
-    .kupala-link:hover .kupala-overlay,
-    .kupala-link:focus-visible .kupala-overlay {
-      opacity: 1;
-    }
-
-    /* 3D ART */
-
-    .art3d-link .art3d-bw,
-    .art3d-link .art3d-color {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    .art3d-link .art3d-bw {
-      opacity: 1;
-    }
-
-    .art3d-link .art3d-color {
-      opacity: 0;
-    }
-
-    .art3d-link:hover .art3d-bw,
-    .art3d-link:focus-visible .art3d-bw {
-      opacity: 0;
-    }
-
-    .art3d-link:hover .art3d-color,
-    .art3d-link:focus-visible .art3d-color {
-      opacity: 1;
-      filter: brightness(1.1);
-    }
-
-    /* ABOUT */
-
-    .about {
-      max-width: 650px;
-      color: #bbb;
-    }
-
-    .about p {
-      margin: 0 0 18px;
-      line-height: 1.8;
-    }
-
-    /* CONTACT */
-
-    .contact-list {
-      max-width: 750px;
-    }
-
-    .contact-row {
-      padding: 16px 0;
-      border-bottom: 1px solid #333;
-    }
-
-    .contact-row a {
-      display: inline-block;
+    .back {
+      color: var(--muted);
       font-size: 14px;
-      text-align: left;
-      overflow-wrap: anywhere;
       transition: color 0.2s;
     }
 
-    .contact-row a:hover {
-      color: #999;
+    .back:hover {
+      color: white;
     }
 
-    footer {
-      padding: 28px 7%;
-      border-top: 1px solid #333;
-      color: #888;
+    .intro {
+      padding: 65px 0 15px;
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 3px;
       font-size: 12px;
     }
 
-    @media (max-width: 650px) {
-      header {
-        justify-content: center;
-      }
-
-      nav {
-        gap: 18px;
-      }
-
-      .hero {
-        padding: 45px 0 35px;
-      }
-
-      h1 {
-        font-size: clamp(42px, 10vw, 65px);
-        letter-spacing: -1px;
-      }
-
-      .subtitle {
-        font-size: 15px;
-      }
-
-      section {
-        margin-bottom: 35px;
-      }
-
-      .projects {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(42px, 7vw, 76px);
+      font-weight: normal;
+      line-height: 1.1;
+      margin: 18px 0 25px;
     }
 
-    @media (hover: none) {
-      .kupala-overlay {
-        opacity: 1;
+    .tools {
+      color: var(--accent);
+      font-size: 14px;
+      letter-spacing: 1px;
+      margin-bottom: 30px;
+    }
+
+    .description {
+      color: #c7c5c8;
+      font-size: 16px;
+      max-width: 760px;
+    }
+
+    .description p {
+      margin: 0 0 14px;
+    }
+
+    .content-section {
+      padding: 25px 0 35px;
+    }
+
+    .section-heading {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 18px;
+      margin-bottom: 25px;
+    }
+
+    h2 {
+      font-family: Georgia, serif;
+      font-size: 32px;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .skill {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 25px;
+    }
+
+    .skill h3 {
+      font-size: 17px;
+      font-weight: normal;
+      color: var(--accent);
+      margin: 0 0 12px;
+    }
+
+    .skill p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #c7c5c8;
+      margin: 0;
+    }
+
+    .learning {
+      max-width: 780px;
+      color: #c7c5c8;
+      font-size: 16px;
+    }
+
+    .learning p {
+      margin: 0 0 15px;
+    }
+
+    /* SCREENSHOT GALLERY */
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .image-box {
+      display: block;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      position: relative;
+      cursor: zoom-in;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease,
+                  filter 0.35s ease;
+    }
+
+    .image-box:hover img {
+      transform: scale(1.035);
+      filter: brightness(1.15);
+    }
+
+    .placeholder {
+      display: none;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #777;
+      font-size: 13px;
+      letter-spacing: 1px;
+      padding: 20px;
+    }
+
+    /* LIGHTBOX */
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.94);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 65px 25px;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 95%;
+      max-height: 90%;
+      object-fit: contain;
+    }
+
+    .close-lightbox {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 35px;
+      cursor: pointer;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 0;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 65px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+      .skills,
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .container {
+        padding: 0 20px;
+      }
+
+      .intro {
+        padding: 50px 0 10px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .kupala-link img,
-      .kupala-link::after,
-      .kupala-overlay,
-      .art3d-link .art3d-bw,
-      .art3d-link .art3d-color {
+      .image-box img {
         transition: none;
       }
     }
@@ -311,194 +284,314 @@
 <body>
 
   <header>
-    <nav>
-      <a href="#work">WORK</a>
-      <a href="#about">ABOUT</a>
-      <a href="#contact">CONTACT</a>
-    </nav>
+    <div class="container header-inner">
+
+      <a href="index.html" class="logo">
+        MARIANNA PETROVA
+      </a>
+
+      <a href="index.html" class="back">
+        ← Back to Portfolio
+      </a>
+
+    </div>
   </header>
 
-  <main>
+  <main class="container">
 
-    <div class="hero">
-      <h1>MARIANNA<br>PETROVA</h1>
+    <!-- INTRODUCTION -->
 
-      <p class="subtitle">
-        2D Artist / Narrative Designer / Indie Game Creator
-      </p>
-    </div>
+    <section class="intro">
 
-    <section id="work">
-      <h2>Selected Work</h2>
-
-      <div class="projects">
-
-        <!-- KUPALA -->
-
-        <div class="project">
-          <a class="project-image kupala-link"
-             href="kupala.html"
-             aria-label="Read more about Kupala">
-
-            <img src="images/Kupala (25).png"
-                 alt="Kupala visual novel artwork">
-
-            <div class="kupala-overlay">
-              <span>READ MORE →</span>
-            </div>
-          </a>
-
-          <h3>Kupala</h3>
-          <p>Visual Novel · 2026</p>
-        </div>
-
-        <!-- 2D ART -->
-
-        <div class="project">
-          <a class="project-image kupala-link"
-             href="art.html"
-             aria-label="View 2D Art and Illustration">
-
-            <img src="images/grandmareading.png"
-                 alt="Grandmother reading a story to the girls">
-
-            <div class="kupala-overlay">
-              <span>READ MORE →</span>
-            </div>
-          </a>
-
-          <h3>2D Art & Illustration</h3>
-          <p>Characters · Environments · Concept Art</p>
-        </div>
-
-        <!-- 3D ART -->
-
-        <div class="project">
-          <a class="project-image kupala-link art3d-link"
-             href="3d.html"
-             aria-label="View 3D Art">
-
-            <img class="art3d-bw"
-                 src="images/3d-art-cover-bw.jpg"
-                 alt="3D models in black and white">
-
-            <img class="art3d-color"
-                 src="images/3d-art-cover-color.jpg"
-                 alt=""
-                 aria-hidden="true">
-
-            <div class="kupala-overlay">
-              <span>READ MORE →</span>
-            </div>
-          </a>
-
-          <h3>3D Art</h3>
-          <p>Blender · Modeling · Texturing</p>
-        </div>
-
-        <!-- UNITY GAME PROJECT -->
-
-        <div class="project">
-          <a class="project-image kupala-link"
-             href="unity.html"
-             aria-label="View Unity Game Project">
-
-            <img src="images/unitycover.png"
-                 alt="Night city environment from Unity prototype">
-
-            <div class="kupala-overlay">
-              <span>READ MORE →</span>
-            </div>
-          </a>
-
-          <h3>Game Projects</h3>
-          <p>Unity · Prototypes · Interactive Experiences</p>
-        </div>
-
+      <div class="eyebrow">
+        Portfolio / Game Development
       </div>
-    </section>
 
-    <!-- ABOUT ME -->
+      <h1>Unity 3D Project</h1>
 
-    <section id="about">
-      <h2>About Me</h2>
+      <div class="tools">
+        Unity · C# · 3D Game Development
+      </div>
 
-      <div class="about">
+      <div class="description">
 
         <p>
-          I'm an independent game developer and 2D artist
-          interested in creating atmospheric stories,
-          characters, and game worlds.
+          This is a small learning project I developed
+          over approximately one month to explore
+          3D game development in Unity.
         </p>
 
         <p>
-          My first game, <em>Kupala</em>, is a horror visual novel
-          released on Steam in 2026. I spent a year and a half
-          developing it independently, working on the story,
-          illustrations, programming, and release.
-        </p>
-
-        <p>
-          My main tools include Ren'Py, Unity, Blender, Krita,
-          and Adobe Photoshop.
-        </p>
-
-        <p>
-          Currently, I'm developing a new visual novel in Unity,
-          working on its story and preparing a playable demo.
-          I'm also open to joining a game studio or collaborating
-          with other creators to create atmospheric and memorable
-          games together.
+          I used free 3D assets to build a small
+          environment and focused on making it
+          interactive. As I worked on the project,
+          I gradually learned how to work with the
+          Unity editor, C# scripts, and different
+          gameplay mechanics.
         </p>
 
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- WHAT I WORKED ON -->
 
-    <section id="contact">
-      <h2>Contact</h2>
+    <section class="content-section">
 
-      <div class="contact-list">
+      <div class="section-heading">
+        <h2>What I Worked On</h2>
+      </div>
 
-        <div class="contact-row">
-          <a href="mailto:marianna.petrova.02@gmail.com">
-            marianna.petrova.02@gmail.com
-          </a>
+      <div class="skills">
+
+        <article class="skill">
+          <h3>Environment & Lighting</h3>
+          <p>
+            I learned how to import and arrange
+            3D models, decorate rooms, adjust
+            objects and materials, and work
+            with lighting to create the
+            atmosphere I wanted.
+          </p>
+        </article>
+
+        <article class="skill">
+          <h3>Player Controls</h3>
+          <p>
+            I added first-person movement and
+            camera controls, allowing the player
+            to walk around and explore the
+            environment.
+          </p>
+        </article>
+
+        <article class="skill">
+          <h3>Object Interactions</h3>
+          <p>
+            I made it possible to pick up, carry,
+            and drop objects, open doors, drawers,
+            and windows, and interact with
+            different items, including food
+            and kitchen objects.
+          </p>
+        </article>
+
+        <article class="skill">
+          <h3>Interface & Messages</h3>
+          <p>
+            I created on-screen instructions
+            that change depending on the player's
+            actions. For example, when holding
+            an object, the interface shows
+            that pressing E will drop it.
+            I also added contextual messages
+            and character thoughts.
+          </p>
+        </article>
+
+        <article class="skill">
+          <h3>Item Combinations & Timed Actions</h3>
+          <p>
+            I experimented with combining
+            ingredients to prepare a sandwich,
+            as well as timed interactions
+            such as washing hands and eating,
+            with progress bars.
+          </p>
+        </article>
+
+        <article class="skill">
+          <h3>Game Logic & C# Basics</h3>
+          <p>
+            I learned how to use conditions
+            in scripts to control when actions
+            become available. For example,
+            the player must wash their hands
+            before they can eat. I also worked
+            on preventing conflicting interactions.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- LEARNING EXPERIENCE -->
+
+    <section class="content-section">
+
+      <div class="section-heading">
+        <h2>My Learning Experience</h2>
+      </div>
+
+      <div class="learning">
+
+        <p>
+          I used ChatGPT to help me understand
+          Unity and C# scripts throughout the
+          project. Over time, I became comfortable
+          navigating the Unity editor, setting up
+          objects and components, adjusting the
+          environment, and making small changes
+          to existing scripts independently.
+        </p>
+
+        <p>
+          I'm continuing to learn C# and enjoy
+          experimenting with new gameplay mechanics.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- SIX SCREENSHOTS -->
+
+    <section class="content-section">
+
+      <div class="section-heading">
+        <h2>Project Screenshots</h2>
+      </div>
+
+      <div class="gallery">
+
+        <!-- SCREENSHOT 1: EXTERIOR -->
+
+        <div class="image-box">
+          <img
+            src="images/unity-exterior.jpg"
+            alt="Nighttime exterior environment"
+            loading="lazy">
+          <div class="placeholder">SCREENSHOT 1</div>
         </div>
 
-        <div class="contact-row">
-          <a href="https://store.steampowered.com/app/4037300/Kupala/"
-             target="_blank"
-             rel="noopener noreferrer">
-            Steam ↗
-          </a>
+        <!-- SCREENSHOT 2: ENVIRONMENT -->
+
+        <div class="image-box">
+          <img
+            src="images/unity-environment.jpg"
+            alt="Interior game environment"
+            loading="lazy">
+          <div class="placeholder">SCREENSHOT 2</div>
         </div>
 
-        <div class="contact-row">
-          <a href="https://tmbaig.itch.io/kupalademo"
-             target="_blank"
-             rel="noopener noreferrer">
-            itch.io ↗
-          </a>
+        <!-- SCREENSHOT 3: FRIDGE -->
+
+        <div class="image-box">
+          <img
+            src="images/unity-fridge.jpg"
+            alt="Interactive refrigerator"
+            loading="lazy">
+          <div class="placeholder">SCREENSHOT 3</div>
         </div>
 
-        <div class="contact-row">
-          <a href="https://t.me/tmbaig"
-             target="_blank"
-             rel="noopener noreferrer">
-            Telegram ↗
-          </a>
+        <!-- SCREENSHOT 4: CRAFTING -->
+
+        <div class="image-box">
+          <img
+            src="images/unity-crafting.jpg"
+            alt="Sandwich crafting interaction"
+            loading="lazy">
+          <div class="placeholder">SCREENSHOT 4</div>
+        </div>
+
+        <!-- SCREENSHOT 5: PICKUP AND DROP -->
+
+        <div class="image-box">
+          <img
+            src="images/unity-pickup-drop.jpg"
+            alt="Object pickup and drop interaction"
+            loading="lazy">
+          <div class="placeholder">SCREENSHOT 5</div>
+        </div>
+
+        <!-- SCREENSHOT 6: WASHING HANDS -->
+
+        <div class="image-box">
+          <img
+            src="images/unity-washing-hands.jpg"
+            alt="Washing hands progress bar"
+            loading="lazy">
+          <div class="placeholder">SCREENSHOT 6</div>
         </div>
 
       </div>
+
     </section>
 
   </main>
 
+  <!-- FOOTER -->
+
   <footer>
-    © 2026 Marianna Petrova
+    <div class="container footer-inner">
+      <span>© 2026 Marianna Petrova</span>
+      <a href="index.html">Back to Portfolio ↑</a>
+    </div>
   </footer>
+
+  <!-- FULLSCREEN IMAGE VIEWER -->
+
+  <div class="lightbox" id="lightbox">
+    <button
+      class="close-lightbox"
+      id="closeLightbox"
+      aria-label="Close image">
+      ×
+    </button>
+
+    <img
+      id="lightboxImage"
+      alt="Enlarged Unity screenshot">
+  </div>
+
+  <script>
+    const lightbox =
+      document.getElementById("lightbox");
+
+    const lightboxImage =
+      document.getElementById("lightboxImage");
+
+    const closeButton =
+      document.getElementById("closeLightbox");
+
+    document.querySelectorAll(".image-box").forEach(box => {
+      const img = box.querySelector("img");
+      const placeholder = box.querySelector(".placeholder");
+
+      img.addEventListener("error", () => {
+        img.style.display = "none";
+        placeholder.style.display = "flex";
+        box.style.cursor = "default";
+      });
+
+      img.addEventListener("click", () => {
+        if (!img.complete || img.naturalWidth === 0) {
+          return;
+        }
+
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt;
+        lightbox.classList.add("open");
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightboxImage.removeAttribute("src");
+    }
+
+    closeButton.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", event => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closeLightbox();
+      }
+    });
+  </script>
 
 </body>
 </html>
