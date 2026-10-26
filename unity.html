@@ -157,10 +157,13 @@
       margin: 0 0 15px;
     }
 
+    /* TWO SCREENSHOTS */
+
     .gallery {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      max-width: 850px;
     }
 
     .gallery-item {
@@ -197,60 +200,7 @@
       text-align: center;
       color: #777;
       font-size: 13px;
-      letter-spacing: 1px;
       padding: 20px;
-    }
-
-    .gallery-item h3 {
-      font-size: 16px;
-      font-weight: normal;
-      margin: 12px 0 4px;
-    }
-
-    .gallery-item p {
-      color: var(--muted);
-      font-size: 13px;
-      margin: 0;
-    }
-
-    .video-box {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      aspect-ratio: 16 / 9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      color: var(--muted);
-    }
-
-    .video-box video {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .video-placeholder {
-      text-align: center;
-      padding: 30px;
-    }
-
-    .play-icon {
-      font-size: 40px;
-      color: var(--accent);
-      margin-bottom: 10px;
-    }
-
-    .video-placeholder p {
-      margin: 0;
-      font-size: 14px;
-    }
-
-    .video-description {
-      color: var(--muted);
-      font-size: 14px;
-      margin-top: 14px;
     }
 
     footer {
@@ -266,6 +216,8 @@
       justify-content: space-between;
       gap: 20px;
     }
+
+    /* FULLSCREEN IMAGE */
 
     .lightbox {
       display: none;
@@ -336,6 +288,8 @@
 
   <main class="container">
 
+    <!-- INTRODUCTION -->
+
     <section class="intro">
 
       <div class="eyebrow">
@@ -350,8 +304,9 @@
 
       <div class="description">
         <p>
-          This is a small learning project I created
-          to explore 3D game development in Unity.
+          This is a small learning project I developed
+          over approximately one month to explore
+          3D game development in Unity.
         </p>
 
         <p>
@@ -365,6 +320,8 @@
       </div>
 
     </section>
+
+    <!-- WHAT I WORKED ON -->
 
     <section class="content-section">
 
@@ -443,8 +400,9 @@
         </article>
 
       </div>
-
     </section>
+
+    <!-- MY LEARNING EXPERIENCE -->
 
     <section class="content-section">
 
@@ -471,6 +429,8 @@
 
     </section>
 
+    <!-- PROJECT SCREENSHOTS -->
+
     <section class="content-section">
 
       <div class="section-heading">
@@ -479,87 +439,33 @@
 
       <div class="gallery">
 
-        <article class="gallery-item">
+        <div class="gallery-item">
           <div class="image-box">
             <img
               src="images/unity-environment.jpg"
-              alt="Unity environment"
+              alt="Unity environment screenshot"
               loading="lazy"
             >
             <div class="placeholder">
-              ENVIRONMENT
+              Screenshot 1
             </div>
           </div>
-          <h3>3D Environment</h3>
-          <p>Scene building and lighting</p>
-        </article>
+        </div>
 
-        <article class="gallery-item">
+        <div class="gallery-item">
           <div class="image-box">
             <img
               src="images/unity-interaction.jpg"
-              alt="Object interaction in Unity"
+              alt="Unity interaction screenshot"
               loading="lazy"
             >
             <div class="placeholder">
-              OBJECT INTERACTION
+              Screenshot 2
             </div>
           </div>
-          <h3>Object Interactions</h3>
-          <p>Picking up and using objects</p>
-        </article>
-
-        <article class="gallery-item">
-          <div class="image-box">
-            <img
-              src="images/unity-kitchen.jpg"
-              alt="Kitchen gameplay in Unity"
-              loading="lazy"
-            >
-            <div class="placeholder">
-              KITCHEN GAMEPLAY
-            </div>
-          </div>
-          <h3>Kitchen Gameplay</h3>
-          <p>Items and gameplay mechanics</p>
-        </article>
-
-        <article class="gallery-item">
-          <div class="image-box">
-            <img
-              src="images/unity-ui.jpg"
-              alt="Unity gameplay interface"
-              loading="lazy"
-            >
-            <div class="placeholder">
-              GAMEPLAY INTERFACE
-            </div>
-          </div>
-          <h3>Gameplay UI</h3>
-          <p>Interaction prompts and progress bars</p>
-        </article>
-
-      </div>
-
-    </section>
-
-    <section class="content-section">
-
-      <div class="section-heading">
-        <h2>Gameplay Demonstration</h2>
-      </div>
-
-      <div class="video-box" id="videoBox">
-        <div class="video-placeholder" id="videoPlaceholder">
-          <div class="play-icon">▷</div>
-          <p>Gameplay video coming soon</p>
         </div>
-      </div>
 
-      <p class="video-description">
-        A short demonstration of the interactive
-        systems I created while learning Unity.
-      </p>
+      </div>
 
     </section>
 
@@ -571,6 +477,8 @@
       <a href="index.html">Back to Portfolio ↑</a>
     </div>
   </footer>
+
+  <!-- FULLSCREEN IMAGE VIEW -->
 
   <div class="lightbox" id="lightbox">
     <button
@@ -636,37 +544,6 @@
         closeLightbox();
       }
     });
-
-    const videoPath = "videos/unity-gameplay.mp4";
-    const videoBox = document.getElementById("videoBox");
-    const videoPlaceholder =
-      document.getElementById("videoPlaceholder");
-
-    const video = document.createElement("video");
-    video.controls = true;
-    video.preload = "metadata";
-    video.playsInline = true;
-
-    const source = document.createElement("source");
-    source.src = videoPath;
-    source.type = "video/mp4";
-
-    video.appendChild(source);
-
-    video.addEventListener("loadedmetadata", () => {
-      videoPlaceholder.style.display = "none";
-      videoBox.appendChild(video);
-    });
-
-    video.addEventListener("error", () => {
-      video.remove();
-    });
-
-    source.addEventListener("error", () => {
-      video.remove();
-    });
-
-    video.load();
   </script>
 
 </body>
