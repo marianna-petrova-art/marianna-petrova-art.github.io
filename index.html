@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>Marianna Petrova | Portfolio</title>
 
   <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
@@ -59,7 +58,7 @@
       padding: 0 7%;
     }
 
-    /* HERO */
+    /* INTRO */
 
     .hero {
       padding: 65px 0 35px;
@@ -96,7 +95,7 @@
       margin: 0 0 20px;
     }
 
-    /* PROJECT GRID */
+    /* PROJECTS */
 
     .projects {
       display: grid;
@@ -138,7 +137,7 @@
       font-size: 13px;
     }
 
-    /* IMAGE HOVER EFFECT */
+    /* PROJECT HOVER EFFECT */
 
     .kupala-link {
       display: block;
@@ -148,8 +147,7 @@
     }
 
     .kupala-link img {
-      transition: filter 0.35s ease,
-                  transform 0.35s ease;
+      transition: filter 0.35s ease, transform 0.35s ease;
     }
 
     .kupala-link::after {
@@ -193,7 +191,7 @@
       opacity: 1;
     }
 
-    /* 3D ART IMAGE TRANSITION */
+    /* 3D ART: BLACK & WHITE TO COLOR */
 
     .art3d-link .art3d-bw,
     .art3d-link .art3d-color {
@@ -202,8 +200,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: opacity 0.5s ease,
-                  transform 0.5s ease;
+      transition: opacity 0.5s ease, transform 0.5s ease;
     }
 
     .art3d-link .art3d-bw {
@@ -225,7 +222,7 @@
       filter: brightness(1.1);
     }
 
-    /* ABOUT ME */
+    /* ABOUT */
 
     .about {
       max-width: 650px;
@@ -323,8 +320,6 @@
 
 <body>
 
-  <!-- NAVIGATION -->
-
   <header>
     <nav>
       <a href="#work">WORK</a>
@@ -335,8 +330,6 @@
 
   <main>
 
-    <!-- HERO -->
-
     <div class="hero">
       <h1>MARIANNA<br>PETROVA</h1>
 
@@ -344,8 +337,6 @@
         2D Artist / Narrative Designer / Indie Game Creator
       </p>
     </div>
-
-    <!-- SELECTED WORK -->
 
     <section id="work">
       <h2>Selected Work</h2>
@@ -355,7 +346,6 @@
         <!-- KUPALA -->
 
         <div class="project">
-
           <a class="project-image kupala-link"
              href="kupala.html"
              aria-label="Read more about Kupala">
@@ -366,18 +356,15 @@
             <div class="kupala-overlay">
               <span>READ MORE →</span>
             </div>
-
           </a>
 
           <h3>Kupala</h3>
           <p>Visual Novel, 2026</p>
-
         </div>
 
         <!-- 2D ART & ILLUSTRATION -->
 
         <div class="project">
-
           <a class="project-image kupala-link"
              href="art.html"
              aria-label="View 2D Art and Illustration">
@@ -388,20 +375,17 @@
             <div class="kupala-overlay">
               <span>READ MORE →</span>
             </div>
-
           </a>
 
           <h3>2D Art & Illustration</h3>
           <p>Characters, Environments, Concept Art</p>
-
         </div>
 
         <!-- 3D ART -->
 
         <div class="project">
-
           <a class="project-image kupala-link art3d-link"
-             href="3d.html"
+             href="blender.html"
              aria-label="View 3D Art">
 
             <img class="art3d-bw"
@@ -416,34 +400,29 @@
             <div class="kupala-overlay">
               <span>READ MORE →</span>
             </div>
-
           </a>
 
           <h3>3D Art</h3>
           <p>Blender, Modeling</p>
-
         </div>
 
         <!-- UNITY PROJECT -->
 
         <div class="project">
-
           <a class="project-image kupala-link"
              href="unity.html"
              aria-label="View Unity Project">
 
             <img src="images/unitycover.png"
-                 alt="Night city environment from Unity prototype">
+                 alt="Unity project screenshot">
 
             <div class="kupala-overlay">
               <span>READ MORE →</span>
             </div>
-
           </a>
 
           <h3>Unity Project</h3>
           <p>Unity, C#, 3D Game Development</p>
-
         </div>
 
       </div>
@@ -526,8 +505,6 @@
     </section>
 
   </main>
-
-  <!-- FOOTER -->
 
   <footer>
     © 2026 Marianna Petrova
