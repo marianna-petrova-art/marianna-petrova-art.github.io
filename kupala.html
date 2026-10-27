@@ -109,6 +109,24 @@
       margin: 0;
     }
 
+    /* STEAM LINK IN HERO */
+
+    .hero-steam-link {
+      display: inline-block;
+      margin-top: 19px;
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: clamp(19px, 2.1vw, 24px);
+      color: #fff;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 6px;
+      transition: color 0.2s ease;
+    }
+
+    .hero-steam-link:hover {
+      color: #aaa;
+    }
+
     /* SECTIONS */
 
     section {
@@ -330,7 +348,8 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .gallery-button img {
+      .gallery-button img,
+      .hero-steam-link {
         transition: none;
       }
     }
@@ -370,6 +389,13 @@
         <p class="hero-release">
           Released in 2026
         </p>
+
+        <a class="hero-steam-link"
+           href="https://store.steampowered.com/app/4037300/Kupala/"
+           target="_blank"
+           rel="noopener noreferrer">
+          View Kupala on Steam ↗
+        </a>
 
       </div>
 
