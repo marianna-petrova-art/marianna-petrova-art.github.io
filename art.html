@@ -123,14 +123,6 @@
       filter: brightness(1.1);
     }
 
-    /* Center the last image in a three-image gallery */
-
-    .gallery .artwork:last-child:nth-child(odd) {
-      grid-column: 1 / -1;
-      width: calc((100% - 18px) / 2);
-      justify-self: center;
-    }
-
     .image-modal {
       display: none;
       position: fixed;
@@ -170,21 +162,32 @@
       color: #aaa;
     }
 
+    /* PROJECT LINK */
+
     .project-note {
       border-top: 1px solid #444;
-      padding-top: 25px;
-      color: #999;
-      font-size: 14px;
+      padding-top: 30px;
+      color: #aaa;
+      font-size: 15px;
       max-width: 850px;
     }
 
-    .project-note a {
-      color: #eee;
-      text-decoration: underline;
-      text-underline-offset: 4px;
+    .project-note p {
+      margin: 0 0 15px;
     }
 
-    .project-note a:hover {
+    .project-link {
+      display: inline-block;
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 24px;
+      color: #fff;
+      text-decoration: underline;
+      text-underline-offset: 6px;
+      text-decoration-thickness: 1px;
+      transition: color 0.2s ease;
+    }
+
+    .project-link:hover {
       color: #aaa;
     }
 
@@ -212,18 +215,18 @@
         grid-template-columns: 1fr;
       }
 
-      .gallery .artwork:last-child:nth-child(odd) {
-        grid-column: auto;
-        width: 100%;
-      }
-
       .image-modal {
         padding: 45px 10px;
+      }
+
+      .project-link {
+        font-size: 21px;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .gallery-button img {
+      .gallery-button img,
+      .project-link {
         transition: none;
       }
     }
@@ -240,6 +243,8 @@
 
   <main>
 
+    <!-- INTRODUCTION -->
+
     <div class="intro">
       <h1>2D ART & ILLUSTRATION</h1>
 
@@ -251,81 +256,7 @@
       </p>
     </div>
 
-    <!-- INTERIORS -->
-
-    <section class="art-section">
-      <h2>Interiors</h2>
-
-      <div class="gallery">
-
-        <div class="artwork">
-          <button class="gallery-button" type="button"
-                  aria-label="Enlarge bedroom illustration">
-            <img src="images/bedroom.png"
-                 alt="Traditional countryside bedroom"
-                 loading="lazy">
-          </button>
-        </div>
-
-        <div class="artwork">
-          <button class="gallery-button" type="button"
-                  aria-label="Enlarge moonlit bedroom illustration">
-            <img src="images/nightroom.png"
-                 alt="Bedroom illuminated by moonlight"
-                 loading="lazy">
-          </button>
-        </div>
-
-        <div class="artwork">
-          <button class="gallery-button" type="button"
-                  aria-label="Enlarge house interior illustration">
-            <img src="images/komnatalena.png"
-                 alt="Traditional wooden house interior"
-                 loading="lazy">
-          </button>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ENVIRONMENTS -->
-
-    <section class="art-section">
-      <h2>Environments</h2>
-
-      <div class="gallery">
-
-        <div class="artwork">
-          <button class="gallery-button" type="button"
-                  aria-label="Enlarge village illustration">
-            <img src="images/village.png"
-                 alt="Countryside village"
-                 loading="lazy">
-          </button>
-        </div>
-
-        <div class="artwork">
-          <button class="gallery-button" type="button"
-                  aria-label="Enlarge field illustration">
-            <img src="images/pole.png"
-                 alt="Field of daisies"
-                 loading="lazy">
-          </button>
-        </div>
-
-        <div class="artwork">
-          <button class="gallery-button" type="button"
-                  aria-label="Enlarge moonlit forest illustration">
-            <img src="images/nocpolana.png"
-                 alt="Moonlit forest ritual"
-                 loading="lazy">
-          </button>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- CHARACTERS -->
+    <!-- CHARACTERS & EXPRESSIONS -->
 
     <section class="art-section">
       <h2>Characters & Expressions</h2>
@@ -371,7 +302,53 @@
       </div>
     </section>
 
-    <!-- LINOCUT -->
+    <!-- BACKGROUND ART -->
+
+    <section class="art-section">
+      <h2>Background Art</h2>
+
+      <div class="gallery">
+
+        <div class="artwork">
+          <button class="gallery-button" type="button"
+                  aria-label="Enlarge village illustration">
+            <img src="images/village.png"
+                 alt="Countryside village"
+                 loading="lazy">
+          </button>
+        </div>
+
+        <div class="artwork">
+          <button class="gallery-button" type="button"
+                  aria-label="Enlarge field illustration">
+            <img src="images/pole.png"
+                 alt="Field of daisies"
+                 loading="lazy">
+          </button>
+        </div>
+
+        <div class="artwork">
+          <button class="gallery-button" type="button"
+                  aria-label="Enlarge bedroom illustration">
+            <img src="images/bedroom.png"
+                 alt="Traditional countryside bedroom"
+                 loading="lazy">
+          </button>
+        </div>
+
+        <div class="artwork">
+          <button class="gallery-button" type="button"
+                  aria-label="Enlarge house interior illustration">
+            <img src="images/komnatalena.png"
+                 alt="Traditional wooden house interior"
+                 loading="lazy">
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LINOCUT-STYLE ILLUSTRATION -->
 
     <section class="art-section">
       <h2>Linocut-Style Illustration</h2>
@@ -390,10 +367,18 @@
       </div>
     </section>
 
+    <!-- PROJECT LINK -->
+
     <div class="project-note">
-      All illustrations featured on this page were created
-      for my independently developed horror visual novel
-      <a href="kupala.html">Kupala ↗</a>.
+      <p>
+        All illustrations featured on this page were created
+        for my independently developed horror visual novel,
+        <em>Kupala</em>.
+      </p>
+
+      <a href="kupala.html" class="project-link">
+        Read More About Kupala ↗
+      </a>
     </div>
 
   </main>
@@ -497,4 +482,3 @@
 
 </body>
 </html>
-
