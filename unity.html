@@ -16,9 +16,7 @@
       --accent: #c8cbd0;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -28,10 +26,7 @@
       line-height: 1.7;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     .container {
       max-width: 1100px;
@@ -57,11 +52,7 @@
       transition: color 0.2s;
     }
 
-    .back:hover {
-      color: white;
-    }
-
-    /* INTRODUCTION */
+    .back:hover { color: white; }
 
     .intro {
       padding: 50px 0 5px;
@@ -96,15 +87,9 @@
       max-width: 760px;
     }
 
-    .description p {
-      margin: 0 0 14px;
-    }
+    .description p { margin: 0 0 14px; }
 
-    /* SECTIONS */
-
-    .content-section {
-      padding: 15px 0 25px;
-    }
+    .content-section { padding: 15px 0 25px; }
 
     .section-heading {
       border-bottom: 1px solid var(--border);
@@ -118,8 +103,6 @@
       font-weight: normal;
       margin: 0;
     }
-
-    /* SCREENSHOT GALLERY */
 
     .gallery {
       display: grid;
@@ -164,17 +147,13 @@
       padding: 20px;
     }
 
-    /* WHAT I WORKED ON */
-
     .work-description {
       max-width: 820px;
       color: #c7c5c8;
       font-size: 16px;
     }
 
-    .work-description p {
-      margin: 0 0 18px;
-    }
+    .work-description p { margin: 0 0 18px; }
 
     .work-description ul {
       margin: 0;
@@ -186,11 +165,7 @@
       margin-bottom: 9px;
     }
 
-    .work-description li::marker {
-      color: #999;
-    }
-
-    /* LEARNING EXPERIENCE */
+    .work-description li::marker { color: #999; }
 
     .learning {
       max-width: 780px;
@@ -198,11 +173,7 @@
       font-size: 16px;
     }
 
-    .learning p {
-      margin: 0 0 15px;
-    }
-
-    /* LIGHTBOX */
+    .learning p { margin: 0 0 15px; }
 
     .lightbox {
       display: none;
@@ -215,9 +186,7 @@
       padding: 65px 25px;
     }
 
-    .lightbox.open {
-      display: flex;
-    }
+    .lightbox.open { display: flex; }
 
     .lightbox img {
       max-width: 95%;
@@ -236,8 +205,6 @@
       cursor: pointer;
     }
 
-    /* FOOTER */
-
     footer {
       border-top: 1px solid var(--border);
       padding: 30px 0;
@@ -252,37 +219,20 @@
       gap: 20px;
     }
 
-    /* MOBILE */
-
     @media (max-width: 700px) {
-      .gallery {
-        grid-template-columns: 1fr;
-      }
-
-      .container {
-        padding: 0 20px;
-      }
-
-      .intro {
-        padding: 40px 0 5px;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-      }
+      .gallery { grid-template-columns: 1fr; }
+      .container { padding: 0 20px; }
+      .intro { padding: 40px 0 5px; }
+      .footer-inner { flex-direction: column; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .image-box img {
-        transition: none;
-      }
+      .image-box img { transition: none; }
     }
   </style>
 </head>
 
 <body>
-
-  <!-- HEADER -->
 
   <header>
     <div class="container header-inner">
@@ -294,10 +244,7 @@
 
   <main class="container">
 
-    <!-- INTRODUCTION -->
-
     <section class="intro">
-
       <div class="eyebrow">
         Portfolio / Game Development
       </div>
@@ -305,7 +252,7 @@
       <h1>Unity Project</h1>
 
       <div class="tools">
-        Unity, C#, 3D Game Development
+        Unity, 3D Game Development, AI-Assisted C#
       </div>
 
       <div class="description">
@@ -319,24 +266,18 @@
           I used free 3D assets to build a small
           environment and focused on making it
           interactive. As I worked on the project,
-          I gradually learned how to work with the
-          Unity editor, C# scripts, and different
-          gameplay mechanics.
+          I learned to use the Unity editor, set up
+          interactions, and test gameplay mechanics.
         </p>
       </div>
     </section>
 
-    <!-- PROJECT SCREENSHOTS -->
-
     <section class="content-section">
-
       <div class="section-heading">
         <h2>Project Screenshots</h2>
       </div>
 
       <div class="gallery">
-
-        <!-- SCREENSHOT 1 -->
 
         <div class="image-box">
           <img
@@ -346,8 +287,6 @@
           <div class="placeholder">SCREENSHOT 1</div>
         </div>
 
-        <!-- SCREENSHOT 2 -->
-
         <div class="image-box">
           <img
             src="unity-environment.jpg"
@@ -355,8 +294,6 @@
             loading="lazy">
           <div class="placeholder">SCREENSHOT 2</div>
         </div>
-
-        <!-- SCREENSHOT 3 -->
 
         <div class="image-box">
           <img
@@ -366,8 +303,6 @@
           <div class="placeholder">SCREENSHOT 3</div>
         </div>
 
-        <!-- SCREENSHOT 4 -->
-
         <div class="image-box">
           <img
             src="unity-crafting.jpg"
@@ -376,8 +311,6 @@
           <div class="placeholder">SCREENSHOT 4</div>
         </div>
 
-        <!-- SCREENSHOT 5 -->
-
         <div class="image-box">
           <img
             src="unity-pickup-drop.jpg"
@@ -385,8 +318,6 @@
             loading="lazy">
           <div class="placeholder">SCREENSHOT 5</div>
         </div>
-
-        <!-- SCREENSHOT 6 -->
 
         <div class="image-box">
           <img
@@ -399,87 +330,65 @@
       </div>
     </section>
 
-    <!-- WHAT I WORKED ON -->
-
     <section class="content-section">
-
       <div class="section-heading">
         <h2>What I Worked On</h2>
       </div>
 
       <div class="work-description">
-
         <p>
           I created a small interactive 3D environment
           in Unity using free assets. My main focus
-          was learning how to work with the Unity
-          editor, write basic C# scripts, and
-          implement gameplay mechanics.
+          was learning to use the Unity editor
+          and implement gameplay mechanics.
+        </p>
+
+        <p>
+          I used ChatGPT to generate C# scripts based on the
+          mechanics I wanted to create. I added the scripts
+          to Unity, tested them, identified problems, and
+          requested changes until the interactions worked
+          as intended.
         </p>
 
         <p>During this project, I worked on:</p>
 
         <ul>
-          <li>
-            Building the environment and adjusting lighting
-          </li>
-          <li>
-            First-person movement and camera controls
-          </li>
-          <li>
-            Picking up, carrying, and dropping objects
-          </li>
-          <li>
-            Opening doors, drawers, windows, and the refrigerator
-          </li>
-          <li>
-            Combining ingredients to prepare a sandwich
-          </li>
-          <li>
-            Adding timed interactions, such as washing hands and eating
-          </li>
-          <li>
-            Creating interaction prompts, progress bars, and character thoughts
-          </li>
-          <li>
-            Using conditions to control when certain actions are available
-          </li>
+          <li>Building the environment and adjusting lighting</li>
+          <li>First-person movement and camera controls</li>
+          <li>Picking up, carrying, and dropping objects</li>
+          <li>Opening doors, drawers, windows, and the refrigerator</li>
+          <li>Combining ingredients to prepare a sandwich</li>
+          <li>Adding timed interactions, such as washing hands and eating</li>
+          <li>Creating interaction prompts, progress bars, and character thoughts</li>
+          <li>Using conditions to control when certain actions are available</li>
         </ul>
-
       </div>
     </section>
 
-    <!-- MY LEARNING EXPERIENCE -->
-
     <section class="content-section">
-
       <div class="section-heading">
         <h2>My Learning Experience</h2>
       </div>
 
       <div class="learning">
-
         <p>
-          I used online resources and AI assistance
-          while learning Unity and C#. Over time,
-          I became more confident working with the
-          Unity editor, setting up objects and
-          components, adjusting the environment,
-          and making small changes to scripts
-          independently.
+          This project helped me become more confident
+          using the Unity editor, setting up objects
+          and components, and troubleshooting gameplay
+          interactions. I learned how to describe the
+          behaviour I wanted, test AI-generated scripts,
+          and refine the results through repeated iterations.
         </p>
 
         <p>
-          I'm continuing to learn C# and enjoy
+          I'm continuing to learn Unity and enjoy
           experimenting with new gameplay mechanics.
         </p>
-
       </div>
     </section>
 
   </main>
-
-  <!-- FOOTER -->
 
   <footer>
     <div class="container footer-inner">
@@ -487,8 +396,6 @@
       <a href="index.html">Back to Portfolio ↑</a>
     </div>
   </footer>
-
-  <!-- FULLSCREEN IMAGE VIEWER -->
 
   <div class="lightbox" id="lightbox">
     <button
