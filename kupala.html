@@ -109,8 +109,6 @@
       margin: 0;
     }
 
-    /* STEAM LINK IN HERO */
-
     .hero-steam-link {
       display: inline-block;
       margin-top: 19px;
@@ -153,6 +151,40 @@
       margin: 0 0 18px;
     }
 
+    /* DESIGN SECTION */
+
+    .design-intro {
+      max-width: 850px;
+      color: #bbb;
+      font-size: 15px;
+      margin: 0 0 28px;
+    }
+
+    .design-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 30px 35px;
+    }
+
+    .design-item {
+      border-top: 1px solid #444;
+      padding-top: 18px;
+    }
+
+    .design-item h3 {
+      font-family: 'PT Serif', Georgia, serif;
+      font-size: 22px;
+      font-weight: 400;
+      margin: 0 0 12px;
+      color: #eee;
+    }
+
+    .design-item p {
+      color: #bbb;
+      font-size: 15px;
+      margin: 0 0 14px;
+    }
+
     /* GALLERY */
 
     .gallery {
@@ -183,7 +215,6 @@
     .gallery-button:hover img,
     .gallery-button:focus-visible img {
       filter: brightness(1.1);
-      transform: none;
     }
 
     /* ENLARGED IMAGE */
@@ -306,10 +337,6 @@
         margin-bottom: 40px;
       }
 
-      .hero-image {
-        aspect-ratio: 16 / 9;
-      }
-
       .hero-content {
         padding: 0;
       }
@@ -328,13 +355,17 @@
         margin-bottom: 15px;
       }
 
-      .gallery {
+      .gallery,
+      .design-grid,
+      .details {
         grid-template-columns: 1fr;
+      }
+
+      .gallery {
         gap: 15px;
       }
 
       .details {
-        grid-template-columns: 1fr;
         gap: 18px;
       }
 
@@ -398,7 +429,6 @@
         </a>
 
       </div>
-
     </div>
 
     <!-- ABOUT THE GAME -->
@@ -425,9 +455,8 @@
           and elements of Slavic mythology. Folklore characters
           and unfamiliar terms are explained in an in-game
           glossary. The village, the old house, and many
-          everyday details were inspired by the developer's
-          own childhood memories of spending time in the
-          countryside.
+          everyday details were inspired by my childhood
+          memories of spending time in the countryside.
         </p>
 
         <p>
@@ -437,17 +466,122 @@
         </p>
 
         <p>
-          The game features 65 original, hand-drawn
-          illustrations. Its dark atmosphere, sense of
-          unease, and anticipation of something unknown
-          contrast with the warmth and comfort of an
-          old countryside home.
+          The game features original hand-drawn illustrations.
+          Its dark atmosphere, sense of unease, and anticipation
+          of something unknown contrast with the warmth and
+          comfort of an old countryside home.
         </p>
 
       </div>
     </section>
 
-    <!-- GALLERY: FOUR ILLUSTRATIONS -->
+    <!-- GAME & NARRATIVE DESIGN -->
+
+    <section>
+      <h2>Game & Narrative Design</h2>
+
+      <p class="design-intro">
+        Since <em>Kupala</em> was my first game, I learned
+        a lot about game development through practice,
+        trial and error. As development progressed, I began
+        to understand how narrative, visuals, sound and
+        gameplay systems could work together.
+      </p>
+
+      <div class="design-grid">
+
+        <div class="design-item">
+          <h3>Narrative Design</h3>
+
+          <p>
+            I wrote the entire script, developed the
+            characters and designed a branching story
+            with five different endings.
+          </p>
+
+          <p>
+            One of the things I learned was how to structure
+            player choices and connect them to different
+            outcomes. I deliberately made the positive
+            ending more difficult to achieve, so players
+            would have to think carefully about their
+            decisions.
+          </p>
+
+          <p>
+            Towards the end of development, I completely
+            rewrote the script to make the story more
+            coherent, consistent and stylistically unified.
+            I'm particularly happy with how the final
+            version turned out.
+          </p>
+        </div>
+
+        <div class="design-item">
+          <h3>UI/UX Design</h3>
+
+          <p>
+            I designed and implemented the game's interface
+            myself. As I gained more experience, I realised
+            that some of my early decisions could be improved.
+          </p>
+
+          <p>
+            Towards the end of development, I reworked
+            the interface to make it more visually
+            consistent with the game's art style and
+            easier for players to navigate.
+          </p>
+        </div>
+
+        <div class="design-item">
+          <h3>Sound & Atmosphere</h3>
+
+          <p>
+            I paid particular attention to how sound
+            could make the game world feel more alive.
+            Small environmental details, such as
+            creaking doors, help players feel as though
+            they are actually inside an old countryside
+            house.
+          </p>
+
+          <p>
+            I also selected music and sound effects
+            to create tension, support the atmosphere
+            and make important story moments more
+            impactful.
+          </p>
+        </div>
+
+        <div class="design-item">
+          <h3>Implementation & Iteration</h3>
+
+          <p>
+            I implemented the story, player choices,
+            ending conditions, glossary and interface
+            in Ren'Py.
+          </p>
+
+          <p>
+            Since this was my first project, I learned
+            many things along the way. By the final
+            stages of development, I had a much better
+            understanding of how the different parts
+            of the game should work together.
+          </p>
+
+          <p>
+            I reworked several elements to make
+            the overall experience more polished
+            and consistent.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GALLERY -->
 
     <section>
       <h2>Gallery</h2>
@@ -524,7 +658,8 @@
         <div>
           <div class="detail-label">My Role</div>
           <div class="detail-value">
-            Solo Developer · Narrative Designer · 2D Artist · Programmer
+            Solo Developer · Game & Narrative Designer ·
+            2D Artist · UI Designer · Programmer
           </div>
         </div>
 
